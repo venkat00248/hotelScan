@@ -5,6 +5,7 @@ import Button from "@mui/material/Button";
 import CloseIcon from "@mui/icons-material/Close";
 import './DrawerLayout.scss'
 import { Footer } from "./Footer";
+import { SocialList } from "./SocialList";
 type Anchor = "top" | "left" | "bottom" | "right";
 
 export const DrawerLayout = () => {
@@ -43,7 +44,7 @@ export const DrawerLayout = () => {
       >
         <CloseIcon  />
       </button>
-      <div>welcome</div>
+     <SocialList/>
       <Footer/>
     </Box>
   );
