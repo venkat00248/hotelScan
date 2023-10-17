@@ -4,13 +4,13 @@ export const Latest = () => {
         <div className='Latest'>
   <section className="section menu" id="menu">
             <div className="menu-container container">
-                    <div className="meu-text">
+                    {/* <div className="meu-text">
                             <h4 className="section-subtitle"><i>Our Menu</i></h4>
                             <h2 className="section-title">Our Popular Menu</h2>
                             <p className="section-description">
                                 Our place designed by pro architecture with psychologist to build best place suit you.  Our place designed by pro architecture with psychologist to build best place suit you.
                             </p>
-                    </div>
+                    </div> */}
 
                     <div className="menu-content">
                             <div className="menu-items">

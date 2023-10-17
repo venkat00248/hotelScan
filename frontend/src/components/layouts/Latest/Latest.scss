@@ -58,16 +58,9 @@ html{
 }
 }
 
-
-/* Pre-CSS */
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body{
+.Latest{
   overflow-x: hidden;
-  background-color: var(--white-color);
+  background-color: var(--white-color) !important;
 }
 
 /* Custom Scrollbar */
@@ -90,14 +83,14 @@ body{
   background-color: var(--primary-color-hover)
 }
 
-body,
-button,
-input{
-  font-family: var(--body-font);
-  font-size: var(--normal-font);
-  font-weight: var(--font-regular);
-  color: var(--text-color);
-}
+// body,
+// button,
+// input{
+//   font-family: var(--body-font);
+//   font-size: var(--normal-font);
+//   font-weight: var(--font-regular);
+//   color: var(--text-color);
+// }
 
 input{
   outline: none;
@@ -108,24 +101,24 @@ ul{
 a{
   text-decoration: none;
 }
-img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+// .Latest img{
+//   width: 100%;
+//   height: 100%;
+//   object-fit: cover;
+// }
 
 /* Reusuable CSS */
 .section{
   padding: 3rem 2rem;
 }
-.container{
-  max-width: 1030px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 3rem;
-  display: flex;
-  flex-direction: column;
-}
+// .container{
+//   max-width: 760px;
+//   width: 100%;
+//   margin: 0 auto;
+//   padding: 0 3rem;
+//   display: flex;
+//   flex-direction: column;
+// }
 .flex{
   display: flex;
   align-items: center;
@@ -185,6 +178,7 @@ img{
   display: grid;
   grid-template-columns:1fr;
   justify-items: center; 
+  margin-top: 60px;
 }
 .menu-img{
   height: 80px;
@@ -200,6 +194,7 @@ img{
   position: relative;
   padding: 1rem 2.5rem;
   background-color: var(--white-color);
+  border-radius: 10px;
 }
 .menuItem-details{
   margin-right: 1.5rem;
@@ -208,7 +203,8 @@ img{
   font-weight: var(--font-semi-bold);
 }
 .menuItem-des{
-  font-size: var(--small-font);
+  // font-size: var(--small-font);
+  line-height: 22px;
 }
 .menuItem-price{
   flex-direction: column;
@@ -249,6 +245,19 @@ img{
 }
   .swiper-button-next {
     right: 10rem;
+}
+.menuItem-des{
+  display: none;
+}
+.menu-item{
+  margin-left: -36px;
+  padding: 1rem;
+}
+.menuItem-details {
+  margin-right: 0px;
+}
+.menuItem-price {
+  padding-left: 7px;
 }
 }
 
