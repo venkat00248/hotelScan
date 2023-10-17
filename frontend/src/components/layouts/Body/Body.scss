@@ -5,7 +5,7 @@
 	box-sizing: border-box;
 }
 html {
-	font-size: 10px;
+	// font-size: 10px;
 	font-family: 'Montserrat', sans-serif;
 	scroll-behavior: smooth;
 }
@@ -19,11 +19,11 @@ a {
 	align-items: center;
 	justify-content: center;
 }
-img {
-	height: 100%;
-	width: 100%;
-	object-fit: cover;
-}
+// img {
+// 	height: 100%;
+// 	width: 100%;
+// 	object-fit: cover;
+// }
 p {
 	color: black;
 	font-size: 1.4rem;

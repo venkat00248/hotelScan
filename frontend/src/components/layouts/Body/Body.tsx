@@ -1,8 +1,8 @@
 import "./Body.scss";
 export const Body = () => {
   return (
-  <>
-      {/* <!-- End Header --> */}
+  <div className="Body">
+     
     
     
       {/* <!-- Hero Section  --> */}
@@ -18,5 +18,5 @@ export const Body = () => {
       </section>
       {/* <!-- End Hero Section  --> */}
     
-      </> 
+      </div> 
 )};
