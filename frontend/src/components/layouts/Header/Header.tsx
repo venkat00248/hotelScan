@@ -80,7 +80,7 @@ export const Header = () => {
                 />
               </button>
               <div className="dropdown-menu dropdown-menu-end">
-                <a className="dropdown-item" href="userprofile.html">
+                <a className="dropdown-item" href="#">
                   <i className="mdi mdi-account-circle font-size-17 align-middle me-1"></i>{" "}
                   Profile
                 </a>

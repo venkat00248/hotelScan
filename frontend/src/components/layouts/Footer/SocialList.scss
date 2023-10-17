@@ -1,9 +1,8 @@
 
 #socalList{
 
- background-color:#000 !important;
 
-div{
+#google{
   width:60px;
   height:60px;
   background:#fff;
@@ -11,14 +10,14 @@ div{
   font-weight:bold;
   font-size:32px;
   font-family:arial;
-  line-height:80px;
+  line-height:62px;
   border-radius:50%;
   position:absolute;
   left:50%;
   top:50%;
   transform:translate(-50%,-50%);
 }
-div:hover:before{
+#google:hover:before{
   position:absolute;
   content:'';
   border:2px solid #fff;
@@ -29,7 +28,7 @@ div:hover:before{
   border-radius:50%;
   animation:animate 2s linear infinite;
 }
-div:hover:after{
+#google:hover:after{
   position:absolute;
   content:'';
   border:2px solid #fff;

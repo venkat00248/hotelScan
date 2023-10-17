@@ -1,4 +1,4 @@
-import "./SocialLogin.scss";
+import "./SocialLoginList.scss";
 export const SocialLoginList = () => {
   return (
     <div className="socialLoginList">

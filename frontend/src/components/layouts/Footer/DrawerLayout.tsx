@@ -4,8 +4,7 @@ import Drawer from "@mui/material/Drawer";
 import Button from "@mui/material/Button";
 import CloseIcon from "@mui/icons-material/Close";
 import './DrawerLayout.scss'
-import { Footer } from "./Footer";
-import { SocialList } from "./SocialList";
+import { SocialLoginList } from "../../Social/SocialLoginList";
 type Anchor = "top" | "left" | "bottom" | "right";
 
 export const DrawerLayout = () => {
@@ -37,6 +36,7 @@ export const DrawerLayout = () => {
       role="presentation"
       // onClick={toggleDrawer("bottom", false)}
       // onKeyDown={toggleDrawer("bottom", false)}
+      // style={{background:"#000"}}
     >
       <button
        className="closeicon"
@@ -44,8 +44,7 @@ export const DrawerLayout = () => {
       >
         <CloseIcon  />
       </button>
-     <SocialList/>
-      <Footer/>
+     <SocialLoginList/>
     </Box>
   );
 
@@ -57,7 +56,7 @@ export const DrawerLayout = () => {
           anchor={"bottom"}
           open={state["bottom"]}
           onClose={toggleDrawer("bottom", false)}
-        >
+                >
           {list}
         </Drawer>
       </React.Fragment>

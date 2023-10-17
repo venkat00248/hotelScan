@@ -80,6 +80,7 @@ body {
   box-sizing: border-box;
 }
 #facebook {
+  font-size: 30px;
   outline: 0 none;
   cursor: pointer;
   position: relative;
@@ -171,6 +172,7 @@ body {
   transition: all 0.1s ease;
 }
 #instagram {
+  font-size: 30px;
   outline: 0 none;
   cursor: pointer;
   position: relative;
@@ -262,6 +264,7 @@ body {
   transition: all 0.1s ease;
 }
 #googleplus {
+  font-size: 30px;
   outline: 0 none;
   cursor: pointer;
   position: relative;
@@ -290,6 +293,9 @@ body {
   backface-visibility: hidden;
 }
 #googleplus:before {
+
+
+
   // content: "\f30f";
   color: #fff;
   font-family: "entypo", sans-serif;
