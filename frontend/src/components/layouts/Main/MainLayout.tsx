@@ -1,7 +1,7 @@
 import "./MainLayout.scss";
-import { Header } from "../Header/Header";
 import { useRoutes } from "react-router-dom";
 import { Routes } from "../../routes/Routes";
+import { Header } from "../Header/Header";
 export const MainLayout = () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const routeResult: any = useRoutes(Routes);
