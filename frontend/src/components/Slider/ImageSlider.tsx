@@ -49,7 +49,7 @@ export const ImageSlider: React.FC = () => {
         ))}
       </div>
     </div>
-    <Latest/>
+    {/* <Latest/> */}
     </>
   );
 };
