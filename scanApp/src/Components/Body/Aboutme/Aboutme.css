@@ -1,0 +1,26 @@
+.aboutme #aboutc {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: auto;
+  width: 500px;
+  max-width: 100%;
+}
+.aboutme .works img {
+  border-radius: 10px;
+  height: 300px;
+  object-fit: contain;
+  width: 100%;
+  max-width: 100%
+}
+.aboutme .aboutsection {
+  min-height: 1600px;  
+}
+.aboutme .upperaboutme p {
+}
+.aboutme .aboutsection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center
+}

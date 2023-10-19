@@ -1,0 +1,48 @@
+.col .linkcont {
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0);  
+}
+
+
+.expandtitle {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  justify-content: space-between;
+  padding: 10px 0
+}
+.col .linkcont {
+  transition: all 0.3s;
+  padding-left: 0;
+
+}
+.columnlinks a:hover p, .columnlinks a:hover span {
+  color: var(--theme-color);
+  text-decoration: underline
+}
+.columnlinks a:hover i {
+  color: var(--theme-color)
+}
+.col .linkcont:hover i {
+  
+}
+.columnlinks p, .columnlinks a  {
+  font-size: 13px;
+}
+.columnlinks span {
+  transition: all 0.3s;
+}
+.columnlinks a {
+  display: flex;
+  align-items: center;
+}
+.columnlinks a i {
+  margin-right: 10px;
+  color: #000
+}
+.columnlinks {
+  display: flex;
+  flex-direction: column
+}

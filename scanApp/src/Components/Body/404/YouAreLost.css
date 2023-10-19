@@ -1,0 +1,39 @@
+.youarelost {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 300px;
+  font-weight: bold;
+  flex-direction: column
+}
+.youarelost p {
+  user-select: none;
+  font-family: serif 
+} 
+.body .youarelost button {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.body .youarelost button span{
+  display: flex;
+  flex-direction: row-reverse;
+}
+.body .youarelost button span i {
+  margin-right: 5px
+}
+.body .youarelost button:hover {
+  background-color: var(--theme-color)
+}
+
+@media (max-width: 800px) {
+  .youarelost {
+    font-size: 250px
+  }
+}
+@media (max-width: 500px) {
+  .youarelost {
+    font-size: 175px
+  }
+}

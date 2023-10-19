@@ -1,0 +1,70 @@
+/* input */
+.input {
+  margin: 15px 0;
+  border-radius: 10px
+}
+.applabel span {
+  transition: all 0.3s;
+  cursor: text;
+  pointer-events: none;
+  color: var(--gray-text)
+}
+.input:valid + span, .input:focus + span{
+  top: 9px;
+  color: var(--theme-color);
+  font-size: 10px;
+
+}
+.input:disabled + span {
+  display: none  
+}
+.applabel {
+  display: flex;
+  flex-direction: column;
+  width: 100%
+}
+.applabel span{
+  position: absolute;
+  z-index: 1;
+  top: 23px;
+  font-size: 15px;
+  left: 10px;  
+}
+/* color input */
+.colorinputcontainer {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+.colorinputcontainer input {
+  width: 55px;
+  height: 37px;
+  cursor: pointer;
+}
+/* textarea */
+.resizabletextarea {
+  outline: none;
+  border: none;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  resize: none;
+  padding: 10px;
+  margin: 15px 0;;
+  width: 100%;
+}
+.resizabletextarea::-webkit-scrollbar {
+  width: 0px
+}
+.resizabletextarea +span {
+  position: absolute;
+  left: 10px;
+  top: 23px;
+  color: var(--gray-text);
+  transition: all 0.3s;
+  pointer-events: none
+}
+.resizabletextarea:valid + span, .resizabletextarea:focus + span {
+  top: 9px;
+  color: var(--theme-color);
+  font-size: 9px
+}

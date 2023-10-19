@@ -1,0 +1,213 @@
+.projectbanner {
+  height: 50vh;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-wrap: wrap
+}
+
+.projectbanner .left {
+  width: 40%;
+  padding: 20px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px
+}
+.projectbanner .left h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px
+}
+.projectbanner .left h2 i {
+  font-size: 32px
+}
+.projectbanner .img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  height: 100%
+}
+.projectbanner img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px
+}
+.item  > span {
+  display: flex;
+  font-size: 14px
+}
+.item .color {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  display: block;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+.item .color:first-of-type {
+  margin-left: 0
+}
+.projectsectiontop {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 40px 0
+}
+.itemcontainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 450px;
+  max-width: 100%;
+}
+.itemcontainer > div {
+  display: flex;
+  gap: 30px
+} 
+.description {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px
+}
+.projectimgs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  gap: 20px;
+  height: 40vh
+}
+.projectimgs > div {
+  padding: 10px;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  height: 100%
+}
+.projectimgs img {
+  width: calc(33.3% - 10px);
+  margin-left: 10px;
+  border-radius: 5px;
+  height: 100%;
+  cursor: pointer;
+}
+.controls {
+  position: absolute;
+  top: 3%;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  width: 200px;
+  max-width: 80%;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: var(--light-shadow);
+  background-color: #fff;
+  z-index: 2;
+}
+.controls i {
+  margin: 0 15px;
+  filter: var(--icon-shadow)
+}
+.modal {
+  position: fixed;
+  width: 70%;
+  height: 70vh;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%) scale(0.5);
+  box-shadow: var(--light-shadow);
+  padding: 20px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  flex-direction: column;
+  z-index: 100;
+  opacity: 0;
+  transition: all 0.3s;
+  box-shadow: var(--shadow)
+}
+.modal .imgcont {
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  left: 50%;
+  display: flex;
+}
+
+.modal-enter-done {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-50%) scale(1)
+}
+.modal .fa-times {
+  position: absolute;
+  top: 20px;
+  right: 20px
+}
+.modal img {
+  border-radius: 5px;
+  width: 100%;
+  position: relative;
+  cursor: grab;
+  transition: all 0.3s;
+  margin: auto
+}
+.projectdemo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  margin: 40px 0
+}
+.projectdemo input {
+  padding: 15px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.3s
+}
+.projectdemo input:hover {
+  background-color: #eee
+}
+.projectdemo input::selection {
+  background-color: transparent;
+  color: #000
+}
+.projectdemo button {
+  padding: 5px 15px;
+}
+.projectdemo iframe{
+  width: 100%;
+  height: 90vh;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  box-shadow: var(--light-shadow)
+}
+@media (max-width: 600px) {
+  .projectbanner {
+    justify-content: center;
+    text-align: center;
+    font-size: 25px
+  }
+  .projectbanner .left h2 {
+    flex-direction: column
+  }
+  .projectbanner .img {
+    display: none
+  }
+}
