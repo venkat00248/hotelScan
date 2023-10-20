@@ -1,5 +1,6 @@
 import { Button } from 'react-bootstrap'
 import { ImageSlider } from '../Slider/ImageSlider'
+import { Link } from 'react-router-dom';
 import './Home.scss'
 export const Home = () => {
   return (
@@ -16,7 +17,7 @@ export const Home = () => {
       </div>
       </div>
       <div className='buttonWrapper'>
-      <Button variant="contained">GET STARTED</Button>
+     <Link to ="/latest"> <Button variant="contained">Show Items</Button></Link>
       </div>
     </div>
   )

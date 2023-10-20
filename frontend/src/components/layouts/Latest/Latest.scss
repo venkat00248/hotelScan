@@ -60,7 +60,7 @@ html{
 
 .Latest{
   overflow-x: hidden;
-  background-color: var(--white-color) !important;
+  // background-color: var(--white-color) !important;
 }
 
 /* Custom Scrollbar */
@@ -109,7 +109,7 @@ a{
 
 /* Reusuable CSS */
 .section{
-  padding: 3rem 2rem;
+  padding: 0rem 0.6rem;
 }
 // .container{
 //   max-width: 760px;
@@ -162,7 +162,7 @@ a{
 }
 /* Menu */
 .menu{
-  background-color: var(--section-bg);
+  // background-color: var(--section-bg);
 }
 .section-title,
 .section-description{
@@ -195,6 +195,7 @@ a{
   padding: 1rem 2.5rem;
   background-color: var(--white-color);
   border-radius: 10px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 .menuItem-details{
   margin-right: 1.5rem;
@@ -246,15 +247,16 @@ a{
   .swiper-button-next {
     right: 10rem;
 }
-.menuItem-des{
-  display: none;
-}
+// .menuItem-des{
+//   display: none;
+// }
 .menu-item{
-  margin-left: -36px;
+  // margin-left: -36px;
   padding: 1rem;
 }
 .menuItem-details {
   margin-right: 0px;
+  width: 174px;
 }
 .menuItem-price {
   padding-left: 7px;
@@ -285,4 +287,13 @@ a{
     grid-template-columns: repeat(3,1fr);
   }
 
+}
+.Latest{
+  background-color: #f9f9f9 !important;
+}
+.spice{
+  img{
+    width: 20px;
+    margin: 3px;
+  }
 }

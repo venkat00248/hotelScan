@@ -5,6 +5,7 @@ import Button from "@mui/material/Button";
 import CloseIcon from "@mui/icons-material/Close";
 import './DrawerLayout.scss'
 import { SocialLoginList } from "../../Social/SocialLoginList";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 type Anchor = "top" | "left" | "bottom" | "right";
 
 export const DrawerLayout = () => {
@@ -33,6 +34,7 @@ export const DrawerLayout = () => {
     <Box
       //   sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }},
       height="87vh"
+      width="120px"
       role="presentation"
       // onClick={toggleDrawer("bottom", false)}
       // onKeyDown={toggleDrawer("bottom", false)}
@@ -40,7 +42,7 @@ export const DrawerLayout = () => {
     >
       <button
        className="closeicon"
-        onClick={toggleDrawer("bottom", false)}
+        onClick={toggleDrawer("right", false)}
       >
         <CloseIcon  />
       </button>
@@ -50,12 +52,12 @@ export const DrawerLayout = () => {
 
   return (
     <div>
-      <React.Fragment key={"bottom"}>
-        <Button onClick={toggleDrawer("bottom", true)}>{"Log IN"}</Button>
+      <React.Fragment key={"right"}>
+        <Button onClick={toggleDrawer("right", true)}><AccountCircleIcon sx={{ fontSize: 40 }}/></Button>
         <Drawer
-          anchor={"bottom"}
-          open={state["bottom"]}
-          onClose={toggleDrawer("bottom", false)}
+          anchor={"right"}
+          open={state["right"]}
+          onClose={toggleDrawer("right", false)}
                 >
           {list}
         </Drawer>

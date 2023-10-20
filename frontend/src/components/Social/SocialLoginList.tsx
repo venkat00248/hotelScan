@@ -2,7 +2,7 @@ import "./SocialLoginList.scss";
 export const SocialLoginList = () => {
   return (
     <div className="socialLoginList">
-      <div className="pen-container">
+      <div className="WrapperLogin">
         <button id="facebook">
           <i className="fa-brands fa-facebook-f"></i>
         </button>

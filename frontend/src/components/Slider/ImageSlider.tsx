@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./ImageSlider.scss"; // Make sure to create this CSS file
-import { Latest } from "../layouts/Latest/Latest";
+// import { Latest } from "../layouts/Latest/Latest";
 
 const images = [
   "https://images.pexels.com/photos/1591224/pexels-photo-1591224.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -19,7 +19,7 @@ export const ImageSlider: React.FC = () => {
       setCurrentImageIndex((prevIndex) =>
         prevIndex === images.length - 1 ? 0 : prevIndex + 1
       );
-    }, 3000); // Change this value to adjust the interval time
+    }, 5000); // Change this value to adjust the interval time
 
     return () => clearInterval(interval);
   }, []);

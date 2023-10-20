@@ -18,8 +18,15 @@ export const Latest = () => {
                                             <img src="./img/food.jpg" alt="" className="menu-img" />
 
                                             <div className="menuItem-details">
-                                                    <h4 className="menuItem-topic">Americano Roasted Coffee</h4>
-                                                    <p className="menuItem-des">It is a long established fact that a reader will be distracted by the readable.</p>
+                                                    <h6 className="menuItem-topic">Indian Roasted Coffee</h6>
+                                                    <p className="menuItem-des">Fish , curry</p>
+                                                   <div className='spice'>
+                                                   <img src='./../../../../public/img/chilli.png' alt='hi'/> 
+                                                   <img src='./../../../../public/img/chilli.png' alt='hi'/> 
+                                                   <img src='./../../../../public/img/chilli.png' alt='hi'/> 
+                                                   <img src='./../../../../public/img/chilli.png' alt='hi'/> 
+                                                   <img src='./../../../../public/img/chilli.png' alt='hi'/> 
+                                                   </div>
                                             </div>
 
                                             <div className="menuItem-price flex">
@@ -31,8 +38,12 @@ export const Latest = () => {
                                             <img src="./img/food.jpg" alt="" className="menu-img" />
 
                                             <div className="menuItem-details">
-                                                    <h4 className="menuItem-topic">Americano Roasted Coffee</h4>
-                                                    <p className="menuItem-des">It is a long established fact that a reader will be distracted by the readable.</p>
+                                                    <h6 className="menuItem-topic">Indian Roasted Coffee</h6>
+                                                    <p className="menuItem-des">Fish , curry</p>
+                                                    <div className='spice'>
+                                                   <img src='./../../../../public/img/chilli.png' alt='hi'/> 
+                                                   <img src='./../../../../public/img/chilli.png' alt='hi'/> 
+                                                   </div>
                                             </div>
 
                                             <div className="menuItem-price flex">
@@ -44,8 +55,11 @@ export const Latest = () => {
                                             <img src="./img/food.jpg" alt="" className="menu-img" />
 
                                             <div className="menuItem-details">
-                                                    <h4 className="menuItem-topic">Americano Roasted Coffee</h4>
-                                                    <p className="menuItem-des">It is a long established fact that a reader will be distracted by the readable.</p>
+                                                    <h6 className="menuItem-topic">Indian Roasted Coffee</h6>
+                                                    <p className="menuItem-des">Fish , curry</p>
+                                                    <div className='spice'>
+                                                   <img src='./../../../../public/img/chilli.png' alt='hi'/> 
+                                                   </div>
                                             </div>
 
                                             <div className="menuItem-price flex">
@@ -57,8 +71,13 @@ export const Latest = () => {
                                             <img src="./img/food.jpg" alt="" className="menu-img" />
 
                                             <div className="menuItem-details">
-                                                    <h4 className="menuItem-topic">Americano Roasted Coffee</h4>
-                                                    <p className="menuItem-des">It is a long established fact that a reader will be distracted by the readable.</p>
+                                                    <h6 className="menuItem-topic">Indian Roasted Coffee</h6>
+                                                    <p className="menuItem-des">Fish , curry</p>
+                                                    <div className='spice'>
+                                                   <img src='./../../../../public/img/chilli.png' alt='hi'/> 
+                                                   <img src='./../../../../public/img/chilli.png' alt='hi'/> 
+                                                   <img src='./../../../../public/img/chilli.png' alt='hi'/> 
+                                                   </div>
                                             </div>
 
                                             <div className="menuItem-price flex">
@@ -70,8 +89,12 @@ export const Latest = () => {
                                             <img src="./img/food.jpg" alt="" className="menu-img" />
 
                                             <div className="menuItem-details">
-                                                    <h4 className="menuItem-topic">Americano Roasted Coffee</h4>
-                                                    <p className="menuItem-des">It is a long established fact that a reader will be distracted by the readable.</p>
+                                                    <h6 className="menuItem-topic">Indian Roasted Coffee</h6>
+                                                    <p className="menuItem-des">Fish , curry</p>
+                                                    <div className='spice'>
+                                                   <img src='./../../../../public/img/chilli.png' alt='hi'/> 
+                                                   <img src='./../../../../public/img/chilli.png' alt='hi'/> 
+                                                   </div>
                                             </div>
 
                                             <div className="menuItem-price flex">

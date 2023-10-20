@@ -69,7 +69,7 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
-  background-color: #f5f7fa;
+  // background-color: #f5f7fa;
   color: #434a54;
   font-size: 1em;
   font-family: "Roboto", sans-serif;
@@ -85,8 +85,8 @@ body {
   cursor: pointer;
   position: relative;
   display: inline-block;
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
   padding: 0px;
   margin: 22px;
   color: #fff;
@@ -95,9 +95,10 @@ body {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
-  -webkit-box-shadow: 0 0 0 20px rgba(59, 89, 152, 0), inset 0 0 5px #344e86, 0 1px 1px 1px rgba(255, 255, 255, 0.4);
-  -moz-box-shadow: 0 0 0 20px rgba(59, 89, 152, 0), inset 0 0 5px #344e86, 0 1px 1px 1px rgba(255, 255, 255, 0.4);
-  box-shadow: 0 0 0 20px rgba(59, 89, 152, 0), inset 0 0 5px #344e86, 0 1px 1px 1px rgba(255, 255, 255, 0.4);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  // -webkit-box-shadow: 0 0 0 20px rgba(59, 89, 152, 0), inset 0 0 5px #344e86, 0 1px 1px 1px rgba(255, 255, 255, 0.4);
+  // -moz-box-shadow: 0 0 0 20px rgba(59, 89, 152, 0), inset 0 0 5px #344e86, 0 1px 1px 1px rgba(255, 255, 255, 0.4);
+  // box-shadow: 0 0 0 20px rgba(59, 89, 152, 0), inset 0 0 5px #344e86, 0 1px 1px 1px rgba(255, 255, 255, 0.4);
   -webkit-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
   -ms-transition: all 0.4s ease;
@@ -177,8 +178,8 @@ body {
   cursor: pointer;
   position: relative;
   display: inline-block;
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
   padding: 0px;
   margin: 22px;
   color: #fff;
@@ -187,9 +188,11 @@ body {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
-  -webkit-box-shadow: 0 0 0 20px rgba(63, 114, 155, 0), inset 0 0 5px #386589, 0 1px 1px 1px rgba(255, 255, 255, 0.4);
-  -moz-box-shadow: 0 0 0 20px rgba(63, 114, 155, 0), inset 0 0 5px #386589, 0 1px 1px 1px rgba(255, 255, 255, 0.4);
-  box-shadow: 0 0 0 20px rgba(63, 114, 155, 0), inset 0 0 5px #386589, 0 1px 1px 1px rgba(255, 255, 255, 0.4);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+  // -webkit-box-shadow: 0 0 0 20px rgba(63, 114, 155, 0), inset 0 0 5px #386589, 0 1px 1px 1px rgba(255, 255, 255, 0.4);
+  // -moz-box-shadow: 0 0 0 20px rgba(63, 114, 155, 0), inset 0 0 5px #386589, 0 1px 1px 1px rgba(255, 255, 255, 0.4);
+  // box-shadow: 0 0 0 20px rgba(63, 114, 155, 0), inset 0 0 5px #386589, 0 1px 1px 1px rgba(255, 255, 255, 0.4);
   -webkit-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
   -ms-transition: all 0.4s ease;
@@ -209,8 +212,8 @@ body {
   position: absolute;
   top: 0px;
   left: 0px;
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
   text-shadow: 0 0 10px #305777;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -269,8 +272,8 @@ body {
   cursor: pointer;
   position: relative;
   display: inline-block;
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
   padding: 0px;
   margin: 22px;
   color: #fff;
@@ -279,9 +282,11 @@ body {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
-  -webkit-box-shadow: 0 0 0 20px rgba(221, 75, 57, 0), inset 0 0 5px #d73925, 0 1px 1px 1px rgba(255, 255, 255, 0.4);
-  -moz-box-shadow: 0 0 0 20px rgba(221, 75, 57, 0), inset 0 0 5px #d73925, 0 1px 1px 1px rgba(255, 255, 255, 0.4);
-  box-shadow: 0 0 0 20px rgba(221, 75, 57, 0), inset 0 0 5px #d73925, 0 1px 1px 1px rgba(255, 255, 255, 0.4);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+  // -webkit-box-shadow: 0 0 0 20px rgba(221, 75, 57, 0), inset 0 0 5px #d73925, 0 1px 1px 1px rgba(255, 255, 255, 0.4);
+  // -moz-box-shadow: 0 0 0 20px rgba(221, 75, 57, 0), inset 0 0 5px #d73925, 0 1px 1px 1px rgba(255, 255, 255, 0.4);
+  // box-shadow: 0 0 0 20px rgba(221, 75, 57, 0), inset 0 0 5px #d73925, 0 1px 1px 1px rgba(255, 255, 255, 0.4);
   -webkit-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
   -ms-transition: all 0.4s ease;
@@ -358,7 +363,12 @@ body {
   -o-transition: all 0.1s ease;
   transition: all 0.1s ease;
 }
-
+.WrapperLogin{
+  display: flex;
+  flex-direction: column;
+  float: right;
+  margin-top: 20px;
+}
 .pen-container {
   position: relative;
   max-width: 680px;
