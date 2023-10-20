@@ -27,7 +27,7 @@ export const profile:any = [
    {
     title: 'Attention',
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis ante nec imperdiet venenatis. Aenean sed consectetur enim. Donec pretium erat ut varius varius.",
-    img: 'https://images.pexels.com/photos/1591224/pexels-photo-1591224.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    img: 'https://i.imgur.com/EMcyIBn.png',
     icon: 'lightbulb'
    }
   

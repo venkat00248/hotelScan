@@ -10,7 +10,10 @@ export const Home = () => {
 
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const currentProfile = profile[currentImageIndex];
+    const currentProfile = profile[currentImageIndex];
+  const handleDashClick = (index: number) => {
+    setCurrentImageIndex(index);
+  }
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) =>
@@ -20,7 +23,7 @@ export const Home = () => {
 
     return () => clearInterval(interval);
   }, []);
-  return (
+    return (
     <div className='Home'>
      <div className='imgWrapper'>
         <div className='imageStyles'>
@@ -30,7 +33,7 @@ export const Home = () => {
         className="slides"
         style={{
           transform: `translateX(${-currentImageIndex * 100}%)`,
-          transition: "transform 0.5s ease"
+          transition: currentImageIndex === 0 ? 'none' : 'transform 0.5s ease',
         }}
       >
         {profile.map((image:any, index:any) => (
@@ -43,6 +46,7 @@ export const Home = () => {
         {profile.map((_:any, index:any) => (
           <div
             key={index}
+            onClick={() => handleDashClick(index)}
             className={`dash ${index === currentImageIndex ? "active" : ""}`}
           />
           
