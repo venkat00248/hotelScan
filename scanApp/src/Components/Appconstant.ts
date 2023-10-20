@@ -180,6 +180,12 @@ export const profile = [
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis ante nec imperdiet venenatis. Aenean sed consectetur enim. Donec pretium erat ut varius varius.",
     img: 'https://i.imgur.com/ih8gwVB.png',
     icon: 'lightbulb'
+   },
+   {
+    title: 'Attention',
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis ante nec imperdiet venenatis. Aenean sed consectetur enim. Donec pretium erat ut varius varius.",
+    img: 'https://i.imgur.com/ih8gwVB.png',
+    icon: 'lightbulb'
    }
   
 ]

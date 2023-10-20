@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { socialicons } from '../../Appconstant'
 import Icon from '../../Reuseable/Icon/Icon'
 import Mappedarray from '../Mappedarray/Mappedarray'

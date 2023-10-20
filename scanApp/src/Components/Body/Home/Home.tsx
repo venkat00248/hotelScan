@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useEffect, useState } from 'react'
 import { profile } from '../../Appconstant'
 import Carouselcont from '../../Reuseable/Carousel/Carouselcont'
@@ -19,7 +21,7 @@ function Home(props:any) {
       <div className="title">
         <h2>
             {/* <Typeonload text={'Joshua Bitton'} /> */}
-            {/* <p>Cloud 4c</p> */}
+            <p>Cloud 4c</p>
           <small className='graytext' style={{fontSize: '14px'}}>
             {/* <p> cloud Infrastructure </p> */}
             {/* <Typeonload text='Web Developer' startDelay={1000} /> */}
@@ -47,7 +49,7 @@ function Home(props:any) {
           backgroundAttachment: 'fixed'
         }}
         />
-        <Aboutsection />
+        {/* <Aboutsection /> */}
         {/* <Featuressection /> */}
     </div>
   )

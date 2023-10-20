@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useEffect } from 'react'
 import AppButton from '../../Reuseable/Button/Button'
 import Themebtn from '../../Reuseable/Button/Themebtn'
