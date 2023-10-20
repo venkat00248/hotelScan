@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useState, useEffect } from "react";
 import "./ImageSlider.scss"; // Make sure to create this CSS file
 // import { Latest } from "../layouts/Latest/Latest";
@@ -10,8 +12,13 @@ const images = [
   "https://images.pexels.com/photos/1591224/pexels-photo-1591224.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
   // Add more image URLs as needed
 ];
+interface MyData {
+  data: any;
+}
+export const ImageSlider = (props:MyData) => {
 
-export const ImageSlider: React.FC = () => {
+  const {data} =props
+  console.log("props", data)
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
@@ -34,14 +41,14 @@ export const ImageSlider: React.FC = () => {
           transition: "transform 0.5s ease"
         }}
       >
-        {images.map((image, index) => (
+        {data.map((image:any, index:any) => (
           <div key={index} className="slide">
-            <img src={image} alt={`slider-${index}`} />
+            <img src={image.img} alt={`slider-${index}`} />
           </div>
         ))}
       </div>
       <div className="dash-container">
-        {images.map((_, index) => (
+        {data.map((_:any, index:any) => (
           <div
             key={index}
             className={`dash ${index === currentImageIndex ? "active" : ""}`}
