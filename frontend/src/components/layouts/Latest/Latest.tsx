@@ -21,11 +21,11 @@ export const Latest = () => {
                                                     <h6 className="menuItem-topic">Indian Roasted Coffee</h6>
                                                     <p className="menuItem-des">Fish , curry</p>
                                                    <div className='spice'>
-                                                   <img src='./../../../../public/img/chilli.png' alt='hi'/> 
-                                                   <img src='./../../../../public/img/chilli.png' alt='hi'/> 
-                                                   <img src='./../../../../public/img/chilli.png' alt='hi'/> 
-                                                   <img src='./../../../../public/img/chilli.png' alt='hi'/> 
-                                                   <img src='./../../../../public/img/chilli.png' alt='hi'/> 
+                                                   <img src='./img/chilli.png' alt='hi'/> 
+                                                   <img src='./img/chilli.png' alt='hi'/> 
+                                                   <img src='./img/chilli.png' alt='hi'/> 
+                                                   <img src='./img/chilli.png' alt='hi'/> 
+                                                   <img src='./img/chilli.png' alt='hi'/> 
                                                    </div>
                                             </div>
 
@@ -41,8 +41,8 @@ export const Latest = () => {
                                                     <h6 className="menuItem-topic">Indian Roasted Coffee</h6>
                                                     <p className="menuItem-des">Fish , curry</p>
                                                     <div className='spice'>
-                                                   <img src='./../../../../public/img/chilli.png' alt='hi'/> 
-                                                   <img src='./../../../../public/img/chilli.png' alt='hi'/> 
+                                                   <img src='./img/chilli.png' alt='hi'/> 
+                                                   <img src='./img/chilli.png' alt='hi'/> 
                                                    </div>
                                             </div>
 
@@ -58,7 +58,7 @@ export const Latest = () => {
                                                     <h6 className="menuItem-topic">Indian Roasted Coffee</h6>
                                                     <p className="menuItem-des">Fish , curry</p>
                                                     <div className='spice'>
-                                                   <img src='./../../../../public/img/chilli.png' alt='hi'/> 
+                                                   <img src='./img/chilli.png' alt='hi'/> 
                                                    </div>
                                             </div>
 
@@ -74,9 +74,9 @@ export const Latest = () => {
                                                     <h6 className="menuItem-topic">Indian Roasted Coffee</h6>
                                                     <p className="menuItem-des">Fish , curry</p>
                                                     <div className='spice'>
-                                                   <img src='./../../../../public/img/chilli.png' alt='hi'/> 
-                                                   <img src='./../../../../public/img/chilli.png' alt='hi'/> 
-                                                   <img src='./../../../../public/img/chilli.png' alt='hi'/> 
+                                                   <img src='./img/chilli.png' alt='hi'/> 
+                                                   <img src='./img/chilli.png' alt='hi'/> 
+                                                   <img src='./img/chilli.png' alt='hi'/> 
                                                    </div>
                                             </div>
 
@@ -92,8 +92,8 @@ export const Latest = () => {
                                                     <h6 className="menuItem-topic">Indian Roasted Coffee</h6>
                                                     <p className="menuItem-des">Fish , curry</p>
                                                     <div className='spice'>
-                                                   <img src='./../../../../public/img/chilli.png' alt='hi'/> 
-                                                   <img src='./../../../../public/img/chilli.png' alt='hi'/> 
+                                                   <img src='./img/chilli.png' alt='hi'/> 
+                                                   <img src='./img/chilli.png' alt='hi'/> 
                                                    </div>
                                             </div>
 
