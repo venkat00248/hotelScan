@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./ImageSlider.scss"; // Make sure to create this CSS file
 // import { Latest } from "../layouts/Latest/Latest";
 
