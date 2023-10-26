@@ -32,3 +32,44 @@ export const profile:any = [
    }
   
 ]
+
+export 
+const menuItems = [
+  {
+    imgSrc: 'https://h-app-scanner.s3.ap-southeast-2.amazonaws.com/img/food.jpg',
+    itemName: 'Indian Roasted Coffee',
+    itemDescription: 'Fish, curry',
+    spiceLevel: 5,
+    discountPrice: '$18.99',
+    realPrice: '$20.66',
+  },
+  {
+        imgSrc: 'https://h-app-scanner.s3.ap-southeast-2.amazonaws.com/img/food.jpg',
+        itemName: 'Indian Roasted Coffee',
+        itemDescription: 'Fish, curry',
+        spiceLevel: 4,
+        discountPrice: '$18.99',
+        realPrice: '$20.66',
+      },{
+        imgSrc: 'https://h-app-scanner.s3.ap-southeast-2.amazonaws.com/img/food.jpg',
+        itemName: 'Indian Roasted Coffee',
+        itemDescription: 'Fish, curry',
+        spiceLevel: 3,
+        discountPrice: '$18.99',
+        realPrice: '$20.66',
+      },{
+        imgSrc: 'https://h-app-scanner.s3.ap-southeast-2.amazonaws.com/img/food.jpg',
+        itemName: 'Indian Roasted Coffee',
+        itemDescription: 'Fish, curry',
+        spiceLevel: 2,
+        discountPrice: '$18.99',
+        realPrice: '$20.66',
+      },{
+        imgSrc: 'https://h-app-scanner.s3.ap-southeast-2.amazonaws.com/img/food.jpg',
+        itemName: 'Indian Roasted Coffee',
+        itemDescription: 'Fish, curry',
+        spiceLevel: 1,
+        discountPrice: '$18.99',
+        realPrice: '$20.66',
+      },
+];

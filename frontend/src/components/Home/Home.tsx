@@ -6,6 +6,7 @@ import './Home.scss'
 import './../Slider/ImageSlider.scss'
 import { profile } from '../../Appconstant';
 import  { useState, useEffect } from "react";
+import MenuIcon from '@mui/icons-material/Menu';
 export const Home = () => {
 
 
@@ -62,7 +63,7 @@ export const Home = () => {
       </div>
       </div>
       <div className='buttonWrapper'>
-     <Link to ="/latest"> <Button variant="contained">Show Items</Button></Link>
+     <Link to ="/latest"> <Button variant="contained"> <MenuIcon/> Items </Button></Link>
       </div>
     </div>
   )
