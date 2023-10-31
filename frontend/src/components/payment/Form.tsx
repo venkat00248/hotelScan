@@ -1,17 +1,12 @@
-import React, { useContext, useState } from "react";
-import PaymentContext, { usePaymentContext } from "./stateManagement/PaymentContext";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import  { useState } from "react";
 import { FormControl, InputAdornment, TextField } from "@mui/material";
 import { useFormData } from "./stateManagement/FormDataContext";
-import { PaymentService } from "../../../services/PaymentService";
-import AccountCircle from '@mui/icons-material/AccountCircle';
 export const Form = () => {
-  const { review, setReview } = useContext(PaymentContext);
   const {
     orderDetails,
     setOrderDetails,
     userDetails,
-    mongoId,
-    setMongoId,
     setUserDetails,
     location,
     setLocation,
@@ -165,36 +160,10 @@ export const Form = () => {
       setCheckboxError(""); // Clear the checkbox error if it's checked
     }
     if(!isFormFieldValid || !checked) return;
-    setReview(false)
+    // setReview(false)
     try {
       // Frame the formData object based on the form field values
-      const formData = {
-          ref_no: orderDetails.orderId,
-          name: userDetails.name,
-          city: location.city,
-          amount: orderDetails.amount,
-          country: location.country,
-          contact_no: userDetails.contact,
-          email: userDetails.email,
-          address: location.address,
-          payment_type: sessionStorage.paymentType ? sessionStorage.paymentType : location.state,
-          postalCode: location.postalCode,
-        }
-      
-      if (mongoId) {
-        // Update the data with the received ID
-        const updatedData = { updatePayload: formData, payment_id: mongoId};
-        const encodedUpdatedData = btoa(JSON.stringify(updatedData));
-        await PaymentService.paymentFormUpdate({data:encodedUpdatedData}); // Replace updateData with the function that updates the data
-        // setReview(false);
-        // Optionally, you can show a success message for updating data
-      } else {
-        const encodedFormData = btoa(JSON.stringify(formData));
-        const postedData = await PaymentService.paymentFormSubmit({data:encodedFormData});
-        const  decodedFormData = JSON.parse(atob(postedData.data.data))
-        setMongoId(decodedFormData?.form?._id)
-        // Handle the case where the server did not provide an ID after posting
-      }
+    
     } catch (error) {
       console.error("Error posting or updating data:", error);
       // Handle errors while posting or updating data

@@ -1,5 +1,7 @@
+/* eslint-disable react-refresh/only-export-components */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // FormDataContext.js
-import React, { createContext, useContext, useState } from "react";
+import  { createContext, useContext, useState } from "react";
 
 const FormDataContext = createContext<any>(null);
 
