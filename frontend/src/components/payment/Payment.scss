@@ -543,3 +543,28 @@ fieldset.scheduler-border {
     .primarycolor , .secondarycolor{
       padding: 0px 20px;
     }
+
+    .custom-file-input {
+      visibility: hidden;
+      width: 0.1px;
+      height: 0.1px;
+      opacity: 0;
+      overflow: hidden;
+      position: absolute;
+      z-index: -1;
+    }
+  
+    .custom-file-input + label {
+      font-size: 1em;
+      font-weight: 700;
+      color: white;
+      background-color: #3498db;
+      display: inline-block;
+      cursor: pointer;
+      padding: 7px 10px;
+    }
+  
+    .custom-file-input:focus + label,
+    .custom-file-input + label:hover {
+      background-color: #2980b9;
+    }

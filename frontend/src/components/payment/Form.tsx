@@ -7,6 +7,7 @@ import {
   Switch,
   TextField,
 } from "@mui/material";
+import FileUploadIcon from '@mui/icons-material/FileUpload';
 import { useFormData } from "./stateManagement/FormDataContext";
 export const Form = () => {
   const {
@@ -246,14 +247,20 @@ export const Form = () => {
                 />
               </FormControl>
             </div>
-            <div className="col-md-12" style={{ marginLeft: "10px" }}>
+            <div className="col-md-12">
+            <FormControl sx={{ m: 1 }}>
               <input
                 type="file"
                 id="avatar"
                 name="avatar"
                 accept="image/png, image/jpeg"
                 onChange={handleFileChange}
+                className="custom-file-input"
               />
+               <label htmlFor="avatar"> <FileUploadIcon/>Choose Logo</label>
+              </FormControl>
+              <FormControl sx={{ m: 1, width: "100%" }}>
+
               {fileSrc && (
                 <img
                   src={fileSrc}
@@ -261,6 +268,8 @@ export const Form = () => {
                   style={{ width: "100px", height: "100px" }}
                 />
               )}
+              </FormControl>
+
             </div>
           </div>
         </div>
