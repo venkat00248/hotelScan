@@ -192,7 +192,7 @@ export const Form = () => {
         <legend className="scheduler-border">Tenant Details</legend>
         <div className="control-group">
           <div className="row g-3">
-            <div className="col-md-9">
+            <div className="col-md-6">
               <FormControl sx={{ m: 1, width: "100%" }}>
                 <TextField
                   id="outlined-basic"
@@ -217,33 +217,27 @@ export const Form = () => {
                 />
               </FormControl>
             </div>
-            <div className="col-md-3">
+            <div className="col-md-6">
               <FormControl sx={{ m: 1, width: "100%" }}>
-                <TextField
+              <TextField
                   id="outlined-basic"
                   fullWidth
                   label="Email"
                   multiline
                   variant="outlined"
-                  value={orderDetails.amount}
-                  // onChange={(e) => setOrderDetails({ ...orderDetails, amount: e.target.value })}
+                  value={userDetails.email}
                   onChange={(e) => {
-                    let amountValue = e.target.value.replace(/[^0-9.]/g, "");
-                    const dotIndex = amountValue.indexOf(".");
-                    if (dotIndex !== -1) {
-                      // Allow only up to 2 characters after the dot
-                      amountValue =
-                        dotIndex + 3 <= amountValue.length
-                          ? amountValue.slice(0, dotIndex + 3)
-                          : amountValue;
-                    }
-                    setOrderDetails({ ...orderDetails, amount: amountValue });
+                    const emailValue = e.target.value
+                      .replace(/[^a-zA-Z0-9@.]/g, "")
+                      .replace(/\.com.*$/, ".com");
+                    setUserDetails({ ...userDetails, email: emailValue });
                   }}
+                  // onChange={(e) => setUserDetails({ ...userDetails, email: e.target.value })}
                   size="small"
-                  onBlur={onBlurOrderDetails("amount")}
-                  error={!!errors.orderDetails.amount}
-                  helperText={errors.orderDetails.amount}
-                  inputProps={{ maxLength: 10 }}
+                  onBlur={onBlurUserDetails("email")}
+                  error={!!errors.userDetails.email}
+                  helperText={errors.userDetails.email}
+                  inputProps={{ maxLength: 50 }}
                 />
               </FormControl>
             </div>
