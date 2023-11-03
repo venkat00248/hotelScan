@@ -2,6 +2,7 @@
 
 import { LoginDialog } from "../Dialog/LoginDialog";
 import { Home } from "../Home/Home";
+import { Items } from "../Items/Items";
 import { Latest } from "../layouts/Latest/Latest";
 import { Onboarding } from "../payment/Onboarding";
 
@@ -13,7 +14,8 @@ export const Routes:any = [
     { path: "/", element: <Home />  },
     {path:"/latest", element: <Latest/>},
     {path:"/login", element: <LoginDialog/>},
-    {path:"/onboarding", element: <Onboarding/>}
+    {path:"/onboarding", element: <Onboarding/>},
+    {path:"/items", element: <Items/>}
    
   ];
   
