@@ -8,7 +8,7 @@ const FormDataContext = createContext<any>(null);
 export const useFormData = () => useContext(FormDataContext);
 
 export const FormDataProvider = ({ children}:any) => {
-  const [orderDetails, setOrderDetails] = useState({ orderId: "", amount: "" });
+  const [tenantDetails, setTenantDetails] = useState({ tenantName: "", email: "" });
   const [userDetails, setUserDetails] = useState({ name: "", email: "", contact: "" });
   const [location, setLocation] = useState({
     address: "",
@@ -23,10 +23,10 @@ const [mongoId, setMongoId]= useState("")
   return (
     <FormDataContext.Provider
       value={{
-        orderDetails,
+        tenantDetails,
         mongoId,
         setMongoId,
-        setOrderDetails,
+        setTenantDetails,
         userDetails,
         setUserDetails,
         location,

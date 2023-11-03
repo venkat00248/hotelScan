@@ -10,8 +10,8 @@ import {
 import { useFormData } from "./stateManagement/FormDataContext";
 export const Form = () => {
   const {
-    orderDetails,
-    setOrderDetails,
+    tenantDetails,
+    setTenantDetails,
     userDetails,
     setUserDetails,
     location,
@@ -21,7 +21,7 @@ export const Form = () => {
   } = useFormData();
 
   const [errors, setErrors] = useState({
-    orderDetails: { orderId: "", amount: "" },
+    tenantDetails: { tenantName: "", email: "" },
     userDetails: {
       name: "",
       email: "",
@@ -44,20 +44,20 @@ export const Form = () => {
     setChecked(event.target.checked);
     setCheckboxError("");
   };
-  const onBlurOrderDetails = (fieldName: any) => () => {
-    if (!orderDetails[fieldName]) {
+  const onBlurtenantDetails = (fieldName: any) => () => {
+    if (!tenantDetails[fieldName]) {
       setErrors((prevErrors) => ({
         ...prevErrors,
-        orderDetails: {
-          ...prevErrors.orderDetails,
+        tenantDetails: {
+          ...prevErrors.tenantDetails,
           [fieldName]: "This field is required.",
         },
       }));
     } else {
       setErrors((prevErrors) => ({
         ...prevErrors,
-        orderDetails: {
-          ...prevErrors.orderDetails,
+        tenantDetails: {
+          ...prevErrors.tenantDetails,
           [fieldName]: "",
         },
       }));
@@ -126,8 +126,8 @@ export const Form = () => {
     event.preventDefault();
 
     // Perform onBlur validation for all fields
-    onBlurOrderDetails("orderId")();
-    onBlurOrderDetails("amount")();
+    onBlurtenantDetails("tenantName")();
+    onBlurtenantDetails("email")();
     onBlurUserDetails("name")();
     onBlurUserDetails("email")();
     onBlurUserDetails("contact")();
@@ -139,8 +139,8 @@ export const Form = () => {
 
     // If there are any validation errors, prevent form submission
     if (
-      errors.orderDetails.orderId ||
-      errors.orderDetails.amount ||
+      errors.tenantDetails.tenantName ||
+      errors.tenantDetails.email ||
       errors.userDetails.name ||
       errors.userDetails.email ||
       errors.userDetails.contact ||
@@ -199,19 +199,19 @@ export const Form = () => {
                   label="Tenant Name"
                   multiline
                   variant="outlined"
-                  value={orderDetails.orderId}
+                  value={tenantDetails.tenantName}
                   onChange={(e) => {
                     const id = e.target.value
                       .replace(/^\s+/, "")
                       .replace(/\s{2,}/g, " ")
                       .replace(/[^a-zA-Z0-9 ]/g, "");
                     // const id = e.target.value.trim().replace(/\s{2,}/g, ' ').replace(/[^a-zA-Z0-9 ]/g, '')
-                    setOrderDetails({ ...orderDetails, orderId: id });
+                    setTenantDetails({ ...tenantDetails, tenantName: id });
                   }}
                   size="small"
-                  onBlur={onBlurOrderDetails("orderId")}
-                  error={!!errors.orderDetails.orderId}
-                  helperText={errors.orderDetails.orderId}
+                  onBlur={onBlurtenantDetails("tenantName")}
+                  error={!!errors.tenantDetails.tenantName}
+                  helperText={errors.tenantDetails.tenantName}
                   inputProps={{ maxLength: 50 }}
                 />
               </FormControl>
@@ -224,18 +224,18 @@ export const Form = () => {
                   label="Email"
                   multiline
                   variant="outlined"
-                  value={userDetails.email}
+                  value={tenantDetails.email}
                   onChange={(e) => {
                     const emailValue = e.target.value
                       .replace(/[^a-zA-Z0-9@.]/g, "")
                       .replace(/\.com.*$/, ".com");
-                    setUserDetails({ ...userDetails, email: emailValue });
+                      setTenantDetails({ ...tenantDetails, email: emailValue });
                   }}
                   // onChange={(e) => setUserDetails({ ...userDetails, email: e.target.value })}
                   size="small"
-                  onBlur={onBlurUserDetails("email")}
-                  error={!!errors.userDetails.email}
-                  helperText={errors.userDetails.email}
+                  onBlur={onBlurtenantDetails("email")}
+                  error={!!errors.tenantDetails.email}
+                  helperText={errors.tenantDetails.email}
                   inputProps={{ maxLength: 50 }}
                 />
               </FormControl>
