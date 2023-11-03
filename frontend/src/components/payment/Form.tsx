@@ -218,7 +218,7 @@ export const Form = () => {
             </div>
             <div className="col-md-6">
               <FormControl sx={{ m: 1, width: "100%" }}>
-              <TextField
+                <TextField
                   id="outlined-basic"
                   fullWidth
                   label="Email"
@@ -241,7 +241,7 @@ export const Form = () => {
               </FormControl>
             </div>
             <div className="col-md-6">
-            {/* <FormControl sx={{ m: 1 }}>
+              {/* <FormControl sx={{ m: 1 }}>
               <input
                 type="file"
                 id="avatar"
@@ -263,23 +263,28 @@ export const Form = () => {
               )}
               </FormControl> */}
               <FormControl sx={{ m: 1 }}>
-
-    <div className="avatar-upload">
-        <div className="avatar-edit">
-            <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg"   onChange={handleFileChange}/>
-            <label htmlFor="imageUpload"></label>
-        </div>
-        <div className="avatar-preview">
-            {/* <div id="imagePreview" style={{background: "url(http://i.pravatar.cc/500?img=7);"}}> */}
-            {fileSrc && ( <img
-                  src={fileSrc}
-                  id="imagePreview"
-                  alt="Selected file"
-                />
-                )}
-            {/* </div> */}
-        </div>
-</div>
+                <div className="avatar-upload">
+                  <div className="avatar-edit">
+                    <input
+                      type="file"
+                      id="imageUpload"
+                      accept=".png, .jpg, .jpeg"
+                      onChange={handleFileChange}
+                    />
+                    <label htmlFor="imageUpload"></label>
+                  </div>
+                  <div className="avatar-preview">
+                    {/* <div id="imagePreview" style={{background: "url(http://i.pravatar.cc/500?img=7);"}}> */}
+                    {fileSrc && (
+                      <img
+                        src={fileSrc}
+                        id="imagePreview"
+                        alt="Selected file"
+                      />
+                    )}
+                    {/* </div> */}
+                  </div>
+                </div>
               </FormControl>
             </div>
           </div>
