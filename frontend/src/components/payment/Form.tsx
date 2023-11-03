@@ -7,7 +7,6 @@ import {
   Switch,
   TextField,
 } from "@mui/material";
-import FileUploadIcon from '@mui/icons-material/FileUpload';
 import { useFormData } from "./stateManagement/FormDataContext";
 export const Form = () => {
   const {
@@ -171,7 +170,7 @@ export const Form = () => {
       // Handle errors while posting or updating data
     }
   };
-  const [fileSrc, setFileSrc] = useState(null);
+  const [fileSrc, setFileSrc] = useState("http://i.pravatar.cc/500?img=7");
 
   const handleFileChange = (event: any) => {
     const file = event.target.files[0];
@@ -241,8 +240,8 @@ export const Form = () => {
                 />
               </FormControl>
             </div>
-            <div className="col-md-12">
-            <FormControl sx={{ m: 1 }}>
+            <div className="col-md-6">
+            {/* <FormControl sx={{ m: 1 }}>
               <input
                 type="file"
                 id="avatar"
@@ -262,8 +261,26 @@ export const Form = () => {
                   style={{ width: "100px", height: "100px" }}
                 />
               )}
-              </FormControl>
+              </FormControl> */}
+              <FormControl sx={{ m: 1 }}>
 
+    <div className="avatar-upload">
+        <div className="avatar-edit">
+            <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg"   onChange={handleFileChange}/>
+            <label htmlFor="imageUpload"></label>
+        </div>
+        <div className="avatar-preview">
+            {/* <div id="imagePreview" style={{background: "url(http://i.pravatar.cc/500?img=7);"}}> */}
+            {fileSrc && ( <img
+                  src={fileSrc}
+                  id="imagePreview"
+                  alt="Selected file"
+                />
+                )}
+            {/* </div> */}
+        </div>
+</div>
+              </FormControl>
             </div>
           </div>
         </div>
