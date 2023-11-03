@@ -1,4 +1,4 @@
-import "./Payment.scss";
+import "./Onboarding.scss";
 import { Form } from "./Form";
 import { Header } from "./Header";
 import { FormDataProvider } from "./stateManagement/FormDataContext";
