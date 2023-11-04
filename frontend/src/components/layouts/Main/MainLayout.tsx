@@ -9,6 +9,8 @@ export const MainLayout = () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const routeResult: any = useRoutes(Routes);
   const config = useConfig();
+  console.log(window.location.pathname.split('/')?.[1]);   
+  console.log(window.location.pathname);   
 console.log("config",config)
   return (
     <div >
