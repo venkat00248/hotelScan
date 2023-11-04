@@ -1,5 +1,6 @@
 {
     "MYSHIFT_URL": "https://myshift.cloud4c.com/?token=",
+    "LOGO":"https://i.imgur.com/QQ8FTjR.png",
     "SHOP_URL": "https://shop.cloud4c.com",
     "ENV": {
     "IS_PROD": false,

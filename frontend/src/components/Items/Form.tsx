@@ -12,7 +12,21 @@ export const Form = () => {
     itemDetails ,
     setItemDetails
   } = useFormData();
+  const [fileSrc, setFileSrc] = useState("http://i.pravatar.cc/500?img=7");
 
+  const handleFileChange = (event: any) => {
+    const file = event.target.files[0];
+    const fileReader = new FileReader();
+
+    fileReader.onload = (e: any) => {
+      const src = e.target.result;
+      setFileSrc(src);
+    };
+
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
+  };
   const [errors, setErrors] = useState({
     itemDetails: { itemName: "", amount: "" },
   
@@ -129,7 +143,32 @@ export const Form = () => {
                 />
               </FormControl>
             </div>
-          
+            <div className="col-md-6">
+              <FormControl sx={{ m: 1 }}>
+                <div className="avatar-upload">
+                  <div className="avatar-edit">
+                    <input
+                      type="file"
+                      id="imageUpload"
+                      accept=".png, .jpg, .jpeg"
+                      onChange={handleFileChange}
+                    />
+                    <label htmlFor="imageUpload"></label>
+                  </div>
+                  <div className="avatar-preview">
+                    {/* <div id="imagePreview" style={{background: "url(http://i.pravatar.cc/500?img=7);"}}> */}
+                    {fileSrc && (
+                      <img
+                        src={fileSrc}
+                        id="imagePreview"
+                        alt="Selected file"
+                      />
+                    )}
+                    {/* </div> */}
+                  </div>
+                </div>
+              </FormControl>
+            </div>
           </div>
         </div>
       </fieldset>
