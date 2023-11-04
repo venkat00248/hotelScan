@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // configContext.js
 import  { createContext, useContext, useEffect, useState } from 'react';
 import { ConfigurationService } from '../services/ConfigurationService';
@@ -23,8 +24,8 @@ const ConfigProvider = ({ children }:any) => {
 
   return (
     <ConfigContext.Provider value={config}>
-      {config ?? children 
-    //   : <div>Loading...</div>
+      {config ? children 
+      : <div>Loading...</div>
       }
     </ConfigContext.Provider>
   );

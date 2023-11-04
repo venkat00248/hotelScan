@@ -1,15 +1,8 @@
+/* eslint-disable @typescript-eslint/ban-types */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import axios, { AxiosInstance, AxiosPromise, AxiosResponse } from "axios";
-import { config } from "../config/config";
 
-export enum EnumContentType {
-  JSON = "application/json",
-  XML = "application/xml",
-  FORM = "application/x-www-form-urlencoded",
-}
-export const configuration = {
-  configuration: config,
-};
-console.log(configuration.configuration);
 class HttpApiService {
   private _axiosInstance: AxiosInstance | undefined;
   private _baseURL: string;
@@ -55,9 +48,7 @@ class HttpApiService {
     );
 
     // Add a response interceptor
-    this._axiosInstance.interceptors.response.use(
-      this.handleSuccess,
-    );
+    this._axiosInstance.interceptors.response.use(this.handleSuccess);
   }
 
   protected getToken() {
@@ -72,7 +63,7 @@ class HttpApiService {
           resolve(response);
         })
         .catch((error) => {
-          throw error;
+          reject(error);
         });
     });
   }
@@ -151,8 +142,6 @@ class HttpApiService {
     sessionStorage.removeItem("errorsdefault");
     return response;
   }
-
- 
 
   redirectTo = (document: any, path: string) => {
     document.location = path;

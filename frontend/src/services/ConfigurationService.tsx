@@ -1,6 +1,6 @@
 import HttpApiService from "./HttpApiService";
 
- const configAPI = "http://localhost:3000"
+ const configAPI = "http://localhost:8080"
 export class Configuration extends HttpApiService {
   constructor() {
     super(`${configAPI}`);

@@ -8,7 +8,7 @@ import { useConfig } from "../../../config/config";
 export const MainLayout = () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const routeResult: any = useRoutes(Routes);
-  const config:any = useConfig();
+  const config = useConfig();
 console.log("config",config)
   return (
     <div >
