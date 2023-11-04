@@ -240,7 +240,7 @@ export const Form = () => {
                 />
               </FormControl>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6" style={{display:"flex", justifyContent:"center"}}>
               {/* <FormControl sx={{ m: 1 }}>
               <input
                 type="file"
@@ -313,14 +313,8 @@ export const Form = () => {
         <legend className="scheduler-border">Communication Details</legend>
         <div className="control-group">
           <div className="row g-3">
-            <div className="col-md-4">
-              <FormControlLabel
-                sx={{ m: 1, width: "100%" }}
-                control={<Switch defaultChecked />}
-                label="Is WhatsApp Enabled"
-              />
-            </div>
-            <div className="col-md-4">
+            
+            {/* <div className="col-md-4">
               <FormControl sx={{ m: 1, width: "100%" }}>
                 <TextField
                   id="outlined-basic"
@@ -343,7 +337,7 @@ export const Form = () => {
                   inputProps={{ maxLength: 50 }}
                 />
               </FormControl>
-            </div>
+            </div> */}
             <div className="col-md-4">
               <FormControl sx={{ m: 1, width: "100%" }}>
                 <TextField
@@ -376,6 +370,13 @@ export const Form = () => {
                   inputProps={{ maxLength: 10 }}
                 />
               </FormControl>
+            </div>
+            <div className="col-md-4">
+              <FormControlLabel
+                sx={{ m: 1, width: "100%" }}
+                control={<Switch defaultChecked />}
+                label="Is WhatsApp Enabled"
+              />
             </div>
           </div>
         </div>
@@ -410,30 +411,6 @@ export const Form = () => {
               </FormControl>
             </div>
             <div className="col-md-6">
-              <FormControl sx={{ m: 1, width: "100%" }}>
-                <TextField
-                  id="outlined-basic"
-                  fullWidth
-                  label="Country"
-                  multiline
-                  variant="outlined"
-                  value={location.country}
-                  onChange={(e) => {
-                    const countryValue = e.target.value
-                      .replace(/^\s+/, "")
-                      .replace(/\s{2,}/g, " ")
-                      .replace(/[^a-zA-Z ]/g, "");
-                    setLocation({ ...location, country: countryValue });
-                  }}
-                  size="small"
-                  onBlur={onBlurLocation("country")}
-                  error={!!errors.location.country}
-                  helperText={errors.location.country}
-                  inputProps={{ maxLength: 50 }}
-                />
-              </FormControl>
-            </div>
-            <div className="col-md-4">
               <FormControl sx={{ m: 1, width: "100%" }}>
                 <TextField
                   id="outlined-basic"
@@ -474,6 +451,30 @@ export const Form = () => {
                   onBlur={onBlurLocation("state")}
                   error={!!errors.location.state}
                   helperText={errors.location.state}
+                  inputProps={{ maxLength: 50 }}
+                />
+              </FormControl>
+            </div>
+            <div className="col-md-4">
+              <FormControl sx={{ m: 1, width: "100%" }}>
+                <TextField
+                  id="outlined-basic"
+                  fullWidth
+                  label="Country"
+                  multiline
+                  variant="outlined"
+                  value={location.country}
+                  onChange={(e) => {
+                    const countryValue = e.target.value
+                      .replace(/^\s+/, "")
+                      .replace(/\s{2,}/g, " ")
+                      .replace(/[^a-zA-Z ]/g, "");
+                    setLocation({ ...location, country: countryValue });
+                  }}
+                  size="small"
+                  onBlur={onBlurLocation("country")}
+                  error={!!errors.location.country}
+                  helperText={errors.location.country}
                   inputProps={{ maxLength: 50 }}
                 />
               </FormControl>

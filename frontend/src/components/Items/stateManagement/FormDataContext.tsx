@@ -9,7 +9,7 @@ export const useFormData = () => useContext(FormDataContext);
 
 export const FormDataProvider = ({ children}:any) => {
   const [orderDetails, setOrderDetails] = useState({ orderId: "", amount: "" });
-  const [itemDetails, setItemDetails] = useState({ itemName: "", amount: "" });
+  const [itemDetails, setItemDetails] = useState({ itemName: "", amount: "" , offerPrice:"", cuponCode:""});
   const [userDetails, setUserDetails] = useState({ name: "", email: "", contact: "" });
   const [location, setLocation] = useState({
     address: "",

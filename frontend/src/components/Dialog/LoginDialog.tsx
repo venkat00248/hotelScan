@@ -32,7 +32,7 @@ export const LoginDialog = () => {
 
   return (
     <React.Fragment>
-      <Button variant="outlined" onClick={handleClickOpen}>
+      <Button variant="outlined" onClick={handleClickOpen} style={{marginTop:"30px"}}>
        Log In
       </Button>
       <BootstrapDialog
