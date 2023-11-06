@@ -2,6 +2,7 @@
 // configContext.js
 import  { createContext, useContext, useEffect, useState } from 'react';
 import { ConfigurationService } from '../services/ConfigurationService';
+import { RippleLoader } from '../components/Loader/RippleLoader';
 
 const ConfigContext:any = createContext(null);
 
@@ -25,7 +26,7 @@ const ConfigProvider = ({ children }:any) => {
   return (
     <ConfigContext.Provider value={config}>
       {config ? children 
-      : <div>Loading...</div>
+      : <RippleLoader/>
       }
     </ConfigContext.Provider>
   );

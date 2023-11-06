@@ -3,6 +3,8 @@
 import { LoginDialog } from "../Dialog/LoginDialog";
 import { Home } from "../Home/Home";
 import { Items } from "../Items/Items";
+import { PacManLoader } from "../Loader/PacManLoader";
+import { RippleLoader } from "../Loader/RippleLoader";
 import { Latest } from "../layouts/Latest/Latest";
 import { Onboarding } from "../payment/Onboarding";
 
@@ -15,7 +17,10 @@ export const Routes:any = [
     {path:"/latest", element: <Latest/>},
     {path:"/login", element: <LoginDialog/>},
     {path:"/onboarding", element: <Onboarding/>},
-    {path:"/items", element: <Items/>}
+    {path:"/items", element: <Items/>},
+    {path:"/loader", element: <RippleLoader/>},
+    {path:"/pmloader", element: <PacManLoader/>},
+   
    
   ];
   
