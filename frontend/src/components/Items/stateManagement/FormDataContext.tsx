@@ -8,34 +8,16 @@ const FormDataContext = createContext<any>(null);
 export const useFormData = () => useContext(FormDataContext);
 
 export const FormDataProvider = ({ children}:any) => {
-  const [orderDetails, setOrderDetails] = useState({ orderId: "", amount: "" });
-  const [itemDetails, setItemDetails] = useState({ itemName: "", amount: "" , offerPrice:"", cuponCode:""});
-  const [userDetails, setUserDetails] = useState({ name: "", email: "", contact: "" });
-  const [location, setLocation] = useState({
-    address: "",
-    country: "",
-    city: "",
-    state: "",
-    postalCode: "",
-  });
-const [checked, setChecked]= useState(false)
-const [mongoId, setMongoId]= useState("")
-
+  const [itemDetails, setItemDetails] = useState({ itemName: "", amount: "" , offerPrice:"", cuponCode:"", description:"", spiceLevel:""});
+const [open, setOpen] = useState(false);
+const [indexedImage, setIndexedImage] = useState(0);
   return (
     <FormDataContext.Provider
       value={{
-        orderDetails,
-        mongoId,
-        setMongoId,
-        setOrderDetails,
-        userDetails,
-        setUserDetails,
-        location,
-        setLocation,
-        checked,
-        setChecked,
         itemDetails,
-        setItemDetails
+        setItemDetails,
+        open, setOpen,
+        indexedImage, setIndexedImage
       }}
     >
       {children}

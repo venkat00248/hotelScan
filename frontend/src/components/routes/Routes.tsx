@@ -5,6 +5,7 @@ import { Home } from "../Home/Home";
 import { Items } from "../Items/Items";
 import { PacManLoader } from "../Loader/PacManLoader";
 import { RippleLoader } from "../Loader/RippleLoader";
+import { TenantLogIn } from "../Tenant/TenantLogIn";
 import { Latest } from "../layouts/Latest/Latest";
 import { Onboarding } from "../payment/Onboarding";
 
@@ -20,6 +21,7 @@ export const Routes:any = [
     {path:"/items", element: <Items/>},
     {path:"/loader", element: <RippleLoader/>},
     {path:"/pmloader", element: <PacManLoader/>},
+    {path:"/tenantLogin", element: <TenantLogIn/>},
    
    
   ];

@@ -530,7 +530,7 @@ export const Form = () => {
         </div>
       </div>
       <div className="col-12">
-        <div className="submit">
+      <FormControl sx={{ m: 1 ,float:"right" }}>
           <button
             type="button"
             className="btn btn-primary"
@@ -538,7 +538,7 @@ export const Form = () => {
           >
             <span>Proceed</span>
           </button>
-        </div>
+        </FormControl>
       </div>
     </div>
   );

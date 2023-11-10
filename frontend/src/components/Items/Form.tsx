@@ -30,7 +30,7 @@ export const Form = () => {
     }
   };
   const [errors, setErrors] = useState({
-    itemDetails: { itemName: "", amount: "" , offerPrice:"" },
+    itemDetails: { itemName: "", amount: "" , offerPrice:"", description:"", spiceLevel:"" },
   });
   const onBlurItemDetails = (fieldName: any) => () => {
     if (!itemDetails[fieldName]) {
@@ -60,9 +60,11 @@ export const Form = () => {
     onBlurItemDetails("itemName")();
     onBlurItemDetails("amount")();
     onBlurItemDetails("offerPrice")();
+    onBlurItemDetails("description")();
+    onBlurItemDetails("spiceLevel")();
 
     // If there are any validation errors, prevent form submission
-    if (errors.itemDetails.itemName || errors.itemDetails.amount || errors.itemDetails.offerPrice) {
+    if (errors.itemDetails.itemName || errors.itemDetails.amount || errors.itemDetails.offerPrice|| errors.itemDetails.description|| errors.itemDetails.spiceLevel) {
       // return;
       isFormFieldValid = false;
     } else {
@@ -167,6 +169,56 @@ export const Form = () => {
               </FormControl>
             </div>
             <div className="col-md-6">
+              <FormControl sx={{ m: 1, width: "100%" }}>
+                <TextField
+                  id="outlined-basic"
+                  fullWidth
+                  label="Description"
+                  multiline
+                  variant="outlined"
+                  value={itemDetails.description}
+                  onChange={(e) => {
+                    const description = e.target.value
+                      .replace(/^\s+/, "")
+                      .replace(/\s{2,}/g, " ")
+                      .replace(/[^a-zA-Z0-9 ]/g, "");
+                    // const id = e.target.value.trim().replace(/\s{2,}/g, ' ').replace(/[^a-zA-Z0-9 ]/g, '')
+                    setItemDetails({ ...itemDetails, description: description });
+                  }}
+                  size="small"
+                  onBlur={onBlurItemDetails("description")}
+                  error={!!errors.itemDetails.description}
+                  helperText={errors.itemDetails.description}
+                  inputProps={{ maxLength: 50 }}
+                />
+              </FormControl>
+            </div>
+            <div className="col-md-6">
+              <FormControl sx={{ m: 1, width: "100%" }}>
+                <TextField
+                  id="outlined-basic"
+                  fullWidth
+                  label="Spice Level"
+                  multiline
+                  variant="outlined"
+                  value={itemDetails.spiceLevel}
+                  onChange={(e) => {
+                    const spiceLevel = e.target.value
+                      .replace(/^\s+/, "")
+                      .replace(/\s{2,}/g, " ")
+                      .replace(/[^a-zA-Z0-9 ]/g, "");
+                    // const spiceLevel = e.target.value.trim().replace(/\s{2,}/g, ' ').replace(/[^a-zA-Z0-9 ]/g, '')
+                    setItemDetails({ ...itemDetails, spiceLevel: spiceLevel });
+                  }}
+                  size="small"
+                  onBlur={onBlurItemDetails("spiceLevel")}
+                  error={!!errors.itemDetails.spiceLevel}
+                  helperText={errors.itemDetails.spiceLevel}
+                  inputProps={{ maxLength: 50 }}
+                />
+              </FormControl>
+            </div>
+            <div className="col-md-6">
               <FormControl sx={{ m: 1, width: "100%" }} size="small">
                 <InputLabel id="demo-select-small-label">Cupon codes</InputLabel>
                 <Select
@@ -215,7 +267,7 @@ export const Form = () => {
         </div>
       </fieldset>
       <div className="col-12">
-        <div className="submit">
+        <FormControl sx={{ m: 1, float:"right" }}>
           <button
             type="button"
             className="btn btn-primary"
@@ -223,7 +275,7 @@ export const Form = () => {
           >
             <span>Add</span>
           </button>
-        </div>
+        </FormControl>
       </div>
     </div>
   );
