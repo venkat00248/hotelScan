@@ -13,8 +13,13 @@ import {
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import Visibility from "@mui/icons-material/Visibility";
 import './TenantLogIn.scss'
+import { ScanAppService } from "../../services/ScanAppService";
+import { useNavigate } from "react-router-dom";
 export const TenantLogIn = () => {
   const [showPassword, setShowPassword] = React.useState(true);
+  const navigate = useNavigate();
+  const [loginResponse, setLoginResponse] = useState<any>(null);
+
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
   const handleMouseDownPassword = (
@@ -66,6 +71,18 @@ export const TenantLogIn = () => {
     }
     // setReview(false)
     try {
+
+      const res = await ScanAppService.tenantLogin({
+        email:"cap@hotmail.com",
+        password:"9b89ccd941379ce925e4"
+      })
+      setLoginResponse(res);
+      if (loginResponse) {
+        // Redirect to another route on successful login
+        navigate('/latest');
+      }
+
+      console.log("res", res)
       // Frame the formData object based on the form field values
     } catch (error) {
       console.error("Error posting or updating data:", error);
@@ -82,7 +99,7 @@ export const TenantLogIn = () => {
         <div className="control-group">
           <div className="row g-3">
           <div className="col-md-12">
-            <img src="./assets/img/LogIn.jpg" alt="bg"/>
+            <img src="./assets/img/cred.jpg" alt="bg"/>
             </div>
             <div className="col-md-6">
               <FormControl sx={{ m: 1, width: "100%" }}>
@@ -123,6 +140,15 @@ export const TenantLogIn = () => {
                   id="outlined-adornment-password"
                   type={showPassword ? "text" : "password"}
                   onBlur={onBlurItemDetails("password")}
+                  value={itemDetails.password}
+                  onChange={(e) => {
+                    const id = e.target.value
+                      .replace(/^\s+/, "")
+                      .replace(/\s{2,}/g, " ")
+                      .replace(/[^a-zA-Z0-9 ]/g, "");
+                    // const id = e.target.value.trim().replace(/\s{2,}/g, ' ').replace(/[^a-zA-Z0-9 ]/g, '')
+                    setItemDetails({ ...itemDetails, password: id });
+                  }}
                   endAdornment={
                     <InputAdornment position="end">
                       <IconButton

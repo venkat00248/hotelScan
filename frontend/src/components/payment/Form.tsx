@@ -8,6 +8,7 @@ import {
   TextField,
 } from "@mui/material";
 import { useFormData } from "./stateManagement/FormDataContext";
+import { ScanAppService } from "../../services/ScanAppService";
 export const Form = () => {
   const {
     tenantDetails,
@@ -18,6 +19,7 @@ export const Form = () => {
     setLocation,
     checked,
     setChecked,
+    themeDetails, setThemeDetails
   } = useFormData();
 
   const [errors, setErrors] = useState({
@@ -122,7 +124,7 @@ export const Form = () => {
   };
 
   const handleSubmit = async (event: any) => {
-    let isFormFieldValid = false;
+    // let isFormFieldValid = false;
     event.preventDefault();
 
     // Perform onBlur validation for all fields
@@ -138,33 +140,43 @@ export const Form = () => {
     onBlurLocation("postalCode")();
 
     // If there are any validation errors, prevent form submission
-    if (
-      errors.tenantDetails.tenantName ||
-      errors.tenantDetails.email ||
-      errors.userDetails.name ||
-      errors.userDetails.email ||
-      errors.userDetails.contact ||
-      errors.location.address ||
-      errors.location.country ||
-      errors.location.city ||
-      errors.location.state ||
-      errors.location.postalCode
-    ) {
-      // return;
-      isFormFieldValid = false;
-    } else {
-      isFormFieldValid = true;
-    }
-    if (!checked) {
-      setCheckboxError("You must agree to the terms and conditions.");
-      // return; // Prevent form submission if checkbox is not checked
-    } else {
-      setCheckboxError(""); // Clear the checkbox error if it's checked
-    }
-    if (!isFormFieldValid || !checked) return;
+    // if (
+    //   errors.tenantDetails.tenantName ||
+    //   errors.tenantDetails.email ||
+    //   errors.userDetails.name ||
+    //   errors.userDetails.email ||
+    //   errors.userDetails.contact ||
+    //   errors.location.address ||
+    //   errors.location.country ||
+    //   errors.location.city ||
+    //   errors.location.state ||
+    //   errors.location.postalCode
+    // ) {
+    //   // return;
+    //   isFormFieldValid = false;
+    // } else {
+    //   isFormFieldValid = true;
+    // }
+    // if (!checked) {
+    //   setCheckboxError("You must agree to the terms and conditions.");
+    //   // return; // Prevent form submission if checkbox is not checked
+    // } else {
+    //   setCheckboxError(""); // Clear the checkbox error if it's checked
+    // }
+    // if (!isFormFieldValid || !checked) return;
     // setReview(false)
     try {
       // Frame the formData object based on the form field values
+
+      const res = await ScanAppService.onBoarding({
+        name: tenantDetails.tenantName,
+        email: tenantDetails.email,
+        "url":fileSrc,
+        // "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFAKyG_UrnbS-IDsnFOV92Kp7LRQCVxyC4BaPY-TwXChIuRvy31ByTmTcUySLf7Z2ZkHk&usqp=CAU",
+        primary_color: themeDetails.primaryColor,
+        secondary_color:themeDetails.secondaryColor
+    })
+    console.log("res", res)
     } catch (error) {
       console.error("Error posting or updating data:", error);
       // Handle errors while posting or updating data
@@ -296,13 +308,18 @@ export const Form = () => {
           <div className="row g-3">
             <div className="col-md-6">
               <div className="d-flex" style={{ marginLeft: "10px" }}>
-                <input type="color" id="head" name="head" value="#e66465" />
+                <input type="color" id="head" name="head" value={themeDetails.primaryColor} onChange={(e)=>{
+                  setThemeDetails({ ...themeDetails, primaryColor: e.target.value });
+                } }/>
                 <p className="primarycolor">Primary Color</p>
               </div>
             </div>
             <div className="col-md-6">
               <div className="d-flex" style={{ marginLeft: "10px" }}>
-                <input type="color" id="head" name="head" value="#f6b73c" />
+                <input type="color" id="head" name="head" value={themeDetails.secondaryColor}  onChange = {(e)=>{ 
+                  setThemeDetails({ ...themeDetails, secondaryColor: e.target.value });
+
+                }}/>
                 <p className="secondarycolor">Secondary Color</p>
               </div>
             </div>

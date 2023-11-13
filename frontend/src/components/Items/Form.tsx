@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import  { SelectChangeEvent } from '@mui/material/Select';
 import { useFormData } from "./stateManagement/FormDataContext";
+import { ScanAppService } from "../../services/ScanAppService";
 export const Form = () => {
   const { itemDetails, setItemDetails } = useFormData();
   const [fileSrc, setFileSrc] = useState("http://i.pravatar.cc/500?img=7");
@@ -72,6 +73,20 @@ export const Form = () => {
     }
     // setReview(false)
     try {
+      const res = await ScanAppService.postItem({
+        
+          "tenant_id": "6551d10d071c0f8140fcd2a1",
+          "name":itemDetails.itemName,
+          "url": fileSrc,
+          "is_special": false,
+          "item_price": itemDetails.amount,
+          "promotional_price": itemDetails.offerPrice,
+          "is_promotional_applicable": false,
+          "is_coupon_applicable": false,
+          "coupon_code": "",
+          "created_by": "52586652",
+          "item_desc": itemDetails.description
+      })
       // Frame the formData object based on the form field values
     } catch (error) {
       console.error("Error posting or updating data:", error);

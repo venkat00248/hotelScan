@@ -9,6 +9,7 @@ export const useFormData = () => useContext(FormDataContext);
 
 export const FormDataProvider = ({ children}:any) => {
   const [tenantDetails, setTenantDetails] = useState({ tenantName: "", email: "" });
+  const [themeDetails, setThemeDetails] = useState({ primaryColor: "#e66465", secondaryColor: "#f6b73c" });
   const [userDetails, setUserDetails] = useState({ name: "", email: "", contact: "" });
   const [location, setLocation] = useState({
     address: "",
@@ -33,6 +34,7 @@ const [mongoId, setMongoId]= useState("")
         setLocation,
         checked,
         setChecked,
+        themeDetails, setThemeDetails
        
       }}
     >
