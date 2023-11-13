@@ -81,9 +81,9 @@ export const TenantLogIn = () => {
       <fieldset>
         <div className="control-group">
           <div className="row g-3">
-          {/* <div className="col-md-12"> */}
-            {/* <img src="./assets/img/LogIn.jpg" alt="bg"/> */}
-            {/* </div> */}
+          <div className="col-md-12">
+            <img src="./assets/img/LogIn.jpg" alt="bg"/>
+            </div>
             <div className="col-md-6">
               <FormControl sx={{ m: 1, width: "100%" }}>
                 <TextField
