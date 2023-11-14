@@ -1,5 +1,6 @@
 // import { SocialLoginList } from "../Social/SocialLoginList";
 
+import { DashBoard } from "../DashBoard/DashBoard";
 import { LoginDialog } from "../Dialog/LoginDialog";
 import { Home } from "../Home/Home";
 import { Items } from "../Items/Items";
@@ -17,12 +18,13 @@ export const Routes:any = [
     { path: "/home", element: <Home />  },
     {path:"/latest", element: <Latest/>},
     {path:"/login", element: <LoginDialog/>},
-    {path:"/onboarding", element: <Onboarding/>},
-    {path:"/items", element: <Items/>},
+    {path:"/onboarding", element: <Onboarding/>,showHeader: true},
+    {path:"/addItems", element: <Items/>},
     {path:"/loader", element: <RippleLoader/>},
     {path:"/pmloader", element: <PacManLoader/>},
     {path:"/tenantLogin", element: <TenantLogIn/>,showHeader: true  },
-    { path: "/", element: <TenantLogIn />, index: true }
+    { path: "/", element: <TenantLogIn />, index: true,showHeader: true  },
+    {path:"/dashBoard", element:<DashBoard/>}
    
    
   ];

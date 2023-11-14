@@ -34,7 +34,7 @@ const { setOpen,
       const res = await ScanAppService.getItems()
 
       console.log("res", res)
-      setProfile(res.data)
+      setProfile(res.data.data)
       // Frame the formData object based on the form field values
     } catch (error) {
       console.error("Error posting or updating data:", error);

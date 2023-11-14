@@ -5,7 +5,7 @@ export const Header = () => {
  
   return (
     <header className="d-flex justify-content-between">
-      <h4>Add Items</h4>
+      <h4>Add Item</h4>
     </header>
   );
 };

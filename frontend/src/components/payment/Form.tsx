@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from "react";
 import {
+  Alert,
   FormControl,
   FormControlLabel,
   InputAdornment,
@@ -21,7 +22,7 @@ export const Form = () => {
     setChecked,
     themeDetails, setThemeDetails
   } = useFormData();
-
+  const [response , setResponse]= useState({message: "",statusCode: 0})
   const [errors, setErrors] = useState({
     tenantDetails: { tenantName: "", email: "" },
     userDetails: {
@@ -177,12 +178,13 @@ export const Form = () => {
         secondary_color:themeDetails.secondaryColor
     })
     console.log("res", res)
+    setResponse({message:res.data.data.message, statusCode:res.data.data.statusCode})
     } catch (error) {
       console.error("Error posting or updating data:", error);
       // Handle errors while posting or updating data
     }
   };
-  const [fileSrc, setFileSrc] = useState("http://i.pravatar.cc/500?img=7");
+  const [fileSrc, setFileSrc] = useState("./assets/img/logo.jpg");
 
   const handleFileChange = (event: any) => {
     const file = event.target.files[0];
@@ -199,6 +201,7 @@ export const Form = () => {
   };
   return (
     <div className="register-form p-5 needs-validation" id="register-form">
+      {response.statusCode==200 && <Alert severity="success">On Boarderd {`${response.message}`}fully</Alert> } 
       <fieldset className="scheduler-border">
         <legend className="scheduler-border">Tenant Details</legend>
         <div className="control-group">

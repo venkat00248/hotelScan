@@ -15,6 +15,7 @@ import Visibility from "@mui/icons-material/Visibility";
 import './TenantLogIn.scss'
 import { ScanAppService } from "../../services/ScanAppService";
 import { useNavigate } from "react-router-dom";
+import { useConfig } from "../../config/config";
 export const TenantLogIn = () => {
   const [showPassword, setShowPassword] = React.useState(true);
   const navigate = useNavigate();
@@ -53,7 +54,14 @@ export const TenantLogIn = () => {
       }));
     }
   };
-
+  const config:any = useConfig();
+  // console.log(window.location.pathname.split('/')?.[1]);   
+  // console.log("pathhhh",window.location);   
+console.log("config from tenant",config)
+// const url = config ?config.data[0].url :"./assets/img/cred.jpg"
+const url = "./assets/img/cred.jpg"
+// setUrl(config.data[0].url)
+// console.log("config from tenant url",config.data[0].url)
   const handleSubmit = async (event: any) => {
     let isFormFieldValid = false;
     event.preventDefault();
@@ -79,7 +87,7 @@ export const TenantLogIn = () => {
       setLoginResponse(res);
       if (loginResponse) {
         // Redirect to another route on successful login
-        navigate('/home');
+        navigate('/dashBoard');
       }
 
       console.log("res", res)
@@ -99,7 +107,7 @@ export const TenantLogIn = () => {
         <div className="control-group">
           <div className="row g-3">
           <div className="col-md-12">
-            <img src="./assets/img/cred.jpg" alt="bg"/>
+            <img src={url} alt="bg"/>
             </div>
             <div className="col-md-6">
               <FormControl sx={{ m: 1, width: "100%" }}>

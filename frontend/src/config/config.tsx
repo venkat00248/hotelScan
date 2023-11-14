@@ -3,17 +3,25 @@
 import  { createContext, useContext, useEffect, useState } from 'react';
 import { ConfigurationService } from '../services/ConfigurationService';
 import { RippleLoader } from '../components/Loader/RippleLoader';
+import { useNavigate } from 'react-router-dom';
 
 const ConfigContext:any = createContext(null);
 
 const ConfigProvider = ({ children }:any) => {
   const [config, setConfig] = useState<any>(null);
-
+  const navigate = useNavigate()
+  console.log("path",window.location.pathname.split('/')?.[1]);   
+  console.log("pathhhh",window.location);   
+  const data = window.location.pathname.split('/')?.[1]
   useEffect(() => {
     const fetchConfig = async () => {
       try {
-        const configData:any = await ConfigurationService.getConfiguration()
+        
+        const configData:any = await ConfigurationService.getTenantDetails(data)
         setConfig(configData.data);
+      //  if(config){ 
+        // window.location.href = "http://localhost:8080/#/tenantLogin";
+      // }
         console.log("configgggggggggggg", configData.data)
       } catch (error) {
         console.error('Error fetching config:', error);
@@ -21,7 +29,7 @@ const ConfigProvider = ({ children }:any) => {
     };
 
     fetchConfig();
-  }, []);
+  }, [navigate , data]);
 
   return (
     <ConfigContext.Provider value={config}>
