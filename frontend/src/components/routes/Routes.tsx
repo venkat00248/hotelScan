@@ -14,14 +14,15 @@ import { Onboarding } from "../payment/Onboarding";
 export const Routes:any = [
     //routes
     // { path: "custom", element: <Header /> },
-    { path: "/", element: <Home />  },
+    { path: "/home", element: <Home />  },
     {path:"/latest", element: <Latest/>},
     {path:"/login", element: <LoginDialog/>},
     {path:"/onboarding", element: <Onboarding/>},
     {path:"/items", element: <Items/>},
     {path:"/loader", element: <RippleLoader/>},
     {path:"/pmloader", element: <PacManLoader/>},
-    {path:"/tenantLogin", element: <TenantLogIn/>},
+    {path:"/tenantLogin", element: <TenantLogIn/>,showHeader: true  },
+    { path: "/", element: <TenantLogIn />, index: true }
    
    
   ];

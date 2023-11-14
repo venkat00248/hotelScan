@@ -79,7 +79,7 @@ export const TenantLogIn = () => {
       setLoginResponse(res);
       if (loginResponse) {
         // Redirect to another route on successful login
-        navigate('/latest');
+        navigate('/home');
       }
 
       console.log("res", res)
@@ -93,9 +93,9 @@ export const TenantLogIn = () => {
     <div
       className="register-form p-5 needs-validation tenantLogin"
       id="register-form"
-      style={{ marginTop: "80px" }}
+      // style={{ marginTop: "80px" }}
     >
-      <fieldset>
+      <fieldset style={{ marginTop: "60px" }}>
         <div className="control-group">
           <div className="row g-3">
           <div className="col-md-12">
@@ -110,13 +110,19 @@ export const TenantLogIn = () => {
                   multiline
                   variant="outlined"
                   value={itemDetails.email}
+                  // onChange={(e) => {
+                  //   const id = e.target.value
+                  //     .replace(/^\s+/, "")
+                  //     .replace(/\s{2,}/g, " ")
+                  //     .replace(/[^a-zA-Z0-9 ]/g, "");
+                  //   // const id = e.target.value.trim().replace(/\s{2,}/g, ' ').replace(/[^a-zA-Z0-9 ]/g, '')
+                  //   setItemDetails({ ...itemDetails, email: id });
+                  // }}
                   onChange={(e) => {
-                    const id = e.target.value
-                      .replace(/^\s+/, "")
-                      .replace(/\s{2,}/g, " ")
-                      .replace(/[^a-zA-Z0-9 ]/g, "");
-                    // const id = e.target.value.trim().replace(/\s{2,}/g, ' ').replace(/[^a-zA-Z0-9 ]/g, '')
-                    setItemDetails({ ...itemDetails, email: id });
+                    const emailValue = e.target.value
+                      .replace(/[^a-zA-Z0-9@.]/g, "")
+                      .replace(/\.com.*$/, ".com");
+                      setItemDetails({ ...itemDetails, email: emailValue });
                   }}
                   size="small"
                   onBlur={onBlurItemDetails("email")}

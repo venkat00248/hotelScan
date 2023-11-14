@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import "./MainLayout.scss";
 import { useRoutes } from "react-router-dom";
 import { Routes } from "../../routes/Routes";
@@ -8,14 +9,16 @@ import { useConfig } from "../../../config/config";
 export const MainLayout = () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const routeResult: any = useRoutes(Routes);
+
+  const isHeaderVisible = Routes.find((route:any) => route.path === window.location.hash.replace('#', ''))?.showHeader;
   const config = useConfig();
   console.log(window.location.pathname.split('/')?.[1]);   
-  console.log(window.location.pathname);   
+  console.log("pathhhh",window.location);   
 console.log("config",config)
   return (
     <div >
       {/* <Header /> */}
-      <MobileHeader/>
+     {!isHeaderVisible && <MobileHeader/> }
       <div className="main-content">
         <div className="routing">
           <div className="layoutRouting" >
