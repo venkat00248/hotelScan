@@ -109,7 +109,7 @@ const url = "./assets/img/cred.jpg"
           <div className="col-md-12">
             <img src={url} alt="bg"/>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-12">
               <FormControl sx={{ m: 1, width: "100%" }}>
                 <TextField
                   id="outlined-basic"
@@ -141,7 +141,7 @@ const url = "./assets/img/cred.jpg"
               </FormControl>
             </div>
 
-            <div className="col-md-6">
+            <div className="col-md-12">
               <FormControl
                 sx={{ m: 1, width: "100%" }}
                 variant="outlined"
