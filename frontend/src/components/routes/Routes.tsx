@@ -10,21 +10,20 @@ import { TenantLogIn } from "../Tenant/TenantLogIn";
 import { Latest } from "../layouts/Latest/Latest";
 import { Onboarding } from "../payment/Onboarding";
 
-
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const Routes:any = [
     //routes
     // { path: "custom", element: <Header /> },
-    { path: "/home", element: <Home />  },
-    {path:"/latest", element: <Latest/>},
-    {path:"/login", element: <LoginDialog/>},
-    {path:"/onboarding", element: <Onboarding/>,showHeader: true},
-    {path:"/addItems", element: <Items/>},
-    {path:"/loader", element: <RippleLoader/>},
-    {path:"/pmloader", element: <PacManLoader/>},
-    {path:"/tenantLogin", element: <TenantLogIn/>,showHeader: true  },
-    { path: "/", element: <TenantLogIn />, index: true,showHeader: true  },
-    {path:"/dashBoard", element:<DashBoard/>}
+    { path: "/:tenant/home", element: <Home />  },
+    {path:"/:tenant/latest", element: <Latest/>},
+    {path:"/:tenant/login", element: <LoginDialog/>},
+    {path:"/:tenant/onboarding", element: <Onboarding/>,showHeader: true},
+    {path:"/:tenant/addItems", element: <Items/>},
+    {path:"/:tenant/loader", element: <RippleLoader/>},
+    {path:"/:tenant/pmloader", element: <PacManLoader/>},
+    {path:"/:tenant/tenantLogin", element: <TenantLogIn/>,showHeader: true  },
+    { path: "/:tenant/", element: <TenantLogIn />, index: true,showHeader: true  },
+    {path:"/:tenant/dashBoard", element:<DashBoard/>}
    
    
   ];

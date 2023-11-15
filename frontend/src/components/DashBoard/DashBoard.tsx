@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { menuItems } from '../../Appconstant';
 import '../layouts/Latest/Latest.scss';
 import './DashBoard.scss'
@@ -6,6 +6,8 @@ import { Button } from 'react-bootstrap';
 import AddIcon from '@mui/icons-material/Add';
 
 export const DashBoard = () => {
+  const {tenant} = useParams()
+
   return (
     <div className='Latest'>
         
@@ -37,7 +39,7 @@ export const DashBoard = () => {
           </div>
         </div>
         <div className="buttonWrapperr">
-        <Link to="/addItems">
+        <Link to={`/${tenant}/addItems`}>
           <Button variant="contained">
             <AddIcon/>
           </Button>

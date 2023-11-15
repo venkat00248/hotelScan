@@ -3,12 +3,15 @@
 import { useState } from "react";
 import * as React from 'react';
 import {
+  Alert,
   FormControl,
+  FormHelperText,
   InputAdornment,
   InputLabel,
   MenuItem,
   Select,
   TextField,
+  TextareaAutosize,
 } from "@mui/material";
 import  { SelectChangeEvent } from '@mui/material/Select';
 import { useFormData } from "./stateManagement/FormDataContext";
@@ -16,7 +19,7 @@ import { ScanAppService } from "../../services/ScanAppService";
 export const Form = () => {
   const { itemDetails, setItemDetails } = useFormData();
   const [fileSrc, setFileSrc] = useState("http://i.pravatar.cc/500?img=7");
-
+  const [response , setResponse]= useState({message: "",statusCode: 0})
   const handleFileChange = (event: any) => {
     const file = event.target.files[0];
     const fileReader = new FileReader();
@@ -87,6 +90,7 @@ export const Form = () => {
           "created_by": "52586652",
           "item_desc": itemDetails.description
       })
+      setResponse({message:"success", statusCode:res.status})
       // Frame the formData object based on the form field values
     } catch (error) {
       console.error("Error posting or updating data:", error);
@@ -100,6 +104,7 @@ export const Form = () => {
   };
   return (
     <div className="register-form p-5 needs-validation" id="register-form">
+        {response.statusCode==200 && <Alert severity="success">Item Added {`${response.message}`}fully</Alert> } 
       <fieldset className="scheduler-border">
         <legend className="scheduler-border">Item Details</legend>
         <div className="control-group">
@@ -184,30 +189,33 @@ export const Form = () => {
               </FormControl>
             </div>
             <div className="col-md-6">
-              <FormControl sx={{ m: 1, width: "100%" }}>
-                <TextField
-                  id="outlined-basic"
-                  fullWidth
-                  label="Description"
-                  multiline
-                  variant="outlined"
-                  value={itemDetails.description}
-                  onChange={(e) => {
-                    const description = e.target.value
-                      .replace(/^\s+/, "")
-                      .replace(/\s{2,}/g, " ")
-                      .replace(/[^a-zA-Z0-9 ]/g, "");
-                    // const id = e.target.value.trim().replace(/\s{2,}/g, ' ').replace(/[^a-zA-Z0-9 ]/g, '')
-                    setItemDetails({ ...itemDetails, description: description });
-                  }}
-                  size="small"
-                  onBlur={onBlurItemDetails("description")}
-                  error={!!errors.itemDetails.description}
-                  helperText={errors.itemDetails.description}
-                  inputProps={{ maxLength: 50 }}
-                />
-              </FormControl>
-            </div>
+            <FormControl sx={{ m: 1, width: "100%" }}>
+              <TextareaAutosize
+                id="outlined-basic"
+                minRows={3}  // Adjust the number of rows as needed
+                placeholder="Description"
+                style={{ width: "100%", padding: "8px", border: "1px solid #ccc" }}
+                value={itemDetails.description}
+                onChange={(e) => {
+                  const description = e.target.value
+                    .replace(/^\s+/, "")
+                    .replace(/\s{2,}/g, " ")
+                    .replace(/[^a-zA-Z0-9 ]/g, "");
+                  setItemDetails({ ...itemDetails, description: description });
+                }}
+                onBlur={onBlurItemDetails("description")}
+                // error={!!errors.itemDetails.description}
+                // helperText={errors.itemDetails.description}
+                maxLength={50}  // You can set the maxLength directly on TextareaAutosize
+              />
+              {errors.itemDetails.description && (
+                <FormHelperText error>
+                  {errors.itemDetails.description}
+                </FormHelperText>
+              )}
+            </FormControl>
+          </div>
+
             <div className="col-md-6">
               <FormControl sx={{ m: 1, width: "100%" }}>
                 <TextField

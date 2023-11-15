@@ -11,7 +11,7 @@ export const MainLayout = () => {
   const routeResult: any = useRoutes(Routes);
 
   const isHeaderVisible = Routes.find((route:any) => route.path === window.location.hash.replace('#', ''))?.showHeader;
-  // const isHeaderVisible = true
+    // const isHeaderVisible = true
   const config = useConfig();
   // console.log(window.location.pathname.split('/')?.[1]);   
   console.log("pathhhh",isHeaderVisible);   

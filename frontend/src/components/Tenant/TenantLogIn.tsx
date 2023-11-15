@@ -14,11 +14,12 @@ import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import Visibility from "@mui/icons-material/Visibility";
 import './TenantLogIn.scss'
 import { ScanAppService } from "../../services/ScanAppService";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useConfig } from "../../config/config";
 export const TenantLogIn = () => {
   const [showPassword, setShowPassword] = React.useState(true);
   const navigate = useNavigate();
+  const { tenant } = useParams();
   const [loginResponse, setLoginResponse] = useState<any>(null);
 
 
@@ -84,10 +85,12 @@ const url = "./assets/img/cred.jpg"
         email:"cap@hotmail.com",
         password:"9b89ccd941379ce925e4"
       })
+      console.log("tenant", tenant)
       setLoginResponse(res);
       if (loginResponse) {
         // Redirect to another route on successful login
-        navigate('/dashBoard');
+        // navigate(`${tenant}/dashBoard`);
+        navigate(`../${tenant}/dashBoard`, { replace: true });
       }
 
       console.log("res", res)

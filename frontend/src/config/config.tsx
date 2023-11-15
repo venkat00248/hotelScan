@@ -10,9 +10,11 @@ const ConfigContext:any = createContext(null);
 const ConfigProvider = ({ children }:any) => {
   const [config, setConfig] = useState<any>(null);
   const navigate = useNavigate()
-  console.log("path",window.location.pathname.split('/')?.[1]);   
+  console.log("path",window.location.hash.split('/')?.[1]);   
   console.log("pathhhh",window.location);   
-  const data = window.location.pathname.split('/')?.[1]
+  console.log(" current pathhhh", window.location.hash.replace('#', ''));   
+ 
+  const data = window.location.hash.split('/')?.[1]
   useEffect(() => {
     const fetchConfig = async () => {
       try {
@@ -20,7 +22,8 @@ const ConfigProvider = ({ children }:any) => {
         const configData:any = await ConfigurationService.getTenantDetails(data)
         setConfig(configData.data);
       //  if(config){ 
-        // window.location.href = "http://localhost:8080/#/tenantLogin";
+      //     navigate("/tenantLogin")
+      //   // window.location.href = "http://localhost:8080/#/tenantLogin";
       // }
         console.log("configgggggggggggg", configData.data)
       } catch (error) {
