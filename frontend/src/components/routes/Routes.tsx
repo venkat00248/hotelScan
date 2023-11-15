@@ -17,13 +17,13 @@ export const Routes:any = [
     { path: "/:tenant/home", element: <Home />  },
     {path:"/:tenant/latest", element: <Latest/>},
     {path:"/:tenant/login", element: <LoginDialog/>},
-    {path:"/:tenant/onboarding", element: <Onboarding/>,showHeader: true},
+    {path:"/:tenant/onboarding", element: <Onboarding/>,showHeader: false},
     {path:"/:tenant/addItems", element: <Items/>},
     {path:"/:tenant/loader", element: <RippleLoader/>},
     {path:"/:tenant/pmloader", element: <PacManLoader/>},
-    {path:"/:tenant/tenantLogin", element: <TenantLogIn/>,showHeader: true  },
-    { path: "/:tenant/", element: <TenantLogIn />, index: true,showHeader: true  },
-    {path:"/:tenant/dashBoard", element:<DashBoard/>}
+    {path:"/:tenant/tenantLogin", element: <TenantLogIn/>,showHeader: false  },
+    { path: "/:tenant/", element: <TenantLogIn />, index: true,showHeader: false  },
+    {path:"/:tenant/dashBoard", element:<DashBoard/>, showHeader:true}
    
    
   ];

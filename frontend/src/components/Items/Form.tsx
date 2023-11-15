@@ -16,7 +16,11 @@ import {
 import  { SelectChangeEvent } from '@mui/material/Select';
 import { useFormData } from "./stateManagement/FormDataContext";
 import { ScanAppService } from "../../services/ScanAppService";
+import { Link, useParams } from "react-router-dom";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 export const Form = () => {
+  const {tenant} = useParams()
+
   const { itemDetails, setItemDetails } = useFormData();
   const [fileSrc, setFileSrc] = useState("http://i.pravatar.cc/500?img=7");
   const [response , setResponse]= useState({message: "",statusCode: 0})
@@ -91,6 +95,7 @@ export const Form = () => {
           "item_desc": itemDetails.description
       })
       setResponse({message:"success", statusCode:res.status})
+      setItemDetails({ itemName: "", amount: "" , offerPrice:"", description:"", spiceLevel:"" })
       // Frame the formData object based on the form field values
     } catch (error) {
       console.error("Error posting or updating data:", error);
@@ -221,15 +226,13 @@ export const Form = () => {
                 <TextField
                   id="outlined-basic"
                   fullWidth
-                  label="Spice Level"
+                  label="Spice Level on a scale of 1-5"
                   multiline
                   variant="outlined"
                   value={itemDetails.spiceLevel}
                   onChange={(e) => {
                     const spiceLevel = e.target.value
-                      .replace(/^\s+/, "")
-                      .replace(/\s{2,}/g, " ")
-                      .replace(/[^a-zA-Z0-9 ]/g, "");
+                    .replace(/[^1-5]/g, "")
                     // const spiceLevel = e.target.value.trim().replace(/\s{2,}/g, ' ').replace(/[^a-zA-Z0-9 ]/g, '')
                     setItemDetails({ ...itemDetails, spiceLevel: spiceLevel });
                   }}
@@ -237,7 +240,7 @@ export const Form = () => {
                   onBlur={onBlurItemDetails("spiceLevel")}
                   error={!!errors.itemDetails.spiceLevel}
                   helperText={errors.itemDetails.spiceLevel}
-                  inputProps={{ maxLength: 50 }}
+                  inputProps={{ maxLength: 1 }}
                 />
               </FormControl>
             </div>
@@ -290,6 +293,9 @@ export const Form = () => {
         </div>
       </fieldset>
       <div className="col-12">
+      <FormControl sx={{ m: 1 }}>
+      <Link to={`/${tenant}/dashBoard`}><div className='backArrow'><ArrowBackIcon /></div></Link>
+        </FormControl>
         <FormControl sx={{ m: 1, float:"right" }}>
           <button
             type="button"
