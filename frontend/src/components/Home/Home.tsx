@@ -41,8 +41,9 @@ const { setOpen,
       // Handle errors while posting or updating data
     }
   }
+    
+    useEffect(()=>{fetchData()},[])
   useEffect(() => {
-    fetchData()
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) =>
         prevIndex === profile.length - 1 ? 0 : prevIndex + 1
@@ -50,7 +51,7 @@ const { setOpen,
     }, 5000); // Change this value to adjust the interval time
 
     return () => clearInterval(interval);
-  }, []);
+  }, [profile]);
   return (
     <div className="Home">
       <div className="imgWrapper">

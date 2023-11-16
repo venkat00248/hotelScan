@@ -14,7 +14,7 @@ import { Onboarding } from "../payment/Onboarding";
 export const Routes:any = [
     //routes
     // { path: "custom", element: <Header /> },
-    { path: "/:tenant/home", element: <Home />  },
+    { path: "/:tenant/home", element: <Home />,showHeader:true  },
     {path:"/:tenant/latest", element: <Latest/>},
     {path:"/:tenant/login", element: <LoginDialog/>},
     {path:"/:tenant/onboarding", element: <Onboarding/>,showHeader: false},
