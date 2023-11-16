@@ -160,7 +160,7 @@ export const Form = () => {
                   inputProps={{ maxLength: 5 }}
                   InputProps={{
                     startAdornment: (
-                      <InputAdornment position="start">$</InputAdornment>
+                      <InputAdornment position="start"> AUD $</InputAdornment>
                     ),
                   }}
                 />
@@ -187,7 +187,7 @@ export const Form = () => {
                   inputProps={{ maxLength: 5 }}
                   InputProps={{
                     startAdornment: (
-                      <InputAdornment position="start">$</InputAdornment>
+                      <InputAdornment position="start">AUD $</InputAdornment>
                     ),
                   }}
                 />
