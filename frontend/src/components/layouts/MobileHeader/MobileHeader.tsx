@@ -13,11 +13,12 @@ export const MobileHeader = () => {
     
         <div className="headerWrapper"> 
         <Link to ='/'> 
+        <div className="logoWrapper">
                   <img
                     className="headerLogo"
                     src={url}
                     alt=""
-                  /> </Link>
+                  /></div> </Link>
                   <div className="drawerWrapper">
                   <DrawerLayout/>
                   </div>

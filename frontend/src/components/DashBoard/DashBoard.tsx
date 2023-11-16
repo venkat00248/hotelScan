@@ -48,8 +48,8 @@ export const DashBoard = () => {
                     </div>
                   </div>
                   <div className="menuItem-price flex">
-                    <span className="discount-price">{menuItem.item_price}</span>
-                    <span className="real-price">{menuItem.promotional_price}</span>
+                    <span className="discount-price">{menuItem.item_price}{menuItem.currency_code}</span>
+                    <span className="real-price">{menuItem.promotional_price}{menuItem.currency_code}</span>
                   </div>
                 </div>
               ))}

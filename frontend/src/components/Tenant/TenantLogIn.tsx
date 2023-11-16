@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   FormControl,
   FormHelperText,
@@ -100,10 +100,17 @@ const url = "./assets/img/cred.jpg"
       // Handle errors while posting or updating data
     }
   };
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === "Enter") {
+      event.preventDefault(); // Prevent form submission on Enter key
+      handleSubmit(event);
+    }
+  };
   return (
     <div
       className="register-form p-5 needs-validation tenantLogin"
       id="register-form"
+      onKeyDown={(e) => handleKeyDown(e)}
       // style={{ marginTop: "80px" }}
     >
       <fieldset style={{ marginTop: "60px" }}>
