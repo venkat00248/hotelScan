@@ -64,6 +64,11 @@
             text-align: center;
             margin: 10px;
             color: #fafdfb;
+            // width: 100%;
+            height: 120px; /* Set the width of the container */
+            // white-space: nowrap; /* Prevent text from wrapping to the next line */
+            overflow: hidden; /* Hide any content that overflows the container */
+            text-overflow: ellipsis;
 
         }
         h3{

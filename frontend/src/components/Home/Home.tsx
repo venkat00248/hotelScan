@@ -24,7 +24,7 @@ const { setOpen,
   const [profile , setProfile]= useState([])
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const currentProfile:any = profile[currentImageIndex];
-  console.log("current", currentProfile)
+  console.log("current", currentProfile,profile, currentImageIndex)
   const handleDashClick = (index: number) => {
     setCurrentImageIndex(index);
   }
@@ -88,7 +88,7 @@ const { setOpen,
         <div className="description">
           <h3 className="firstH3">Great Taste ,</h3>
           <h3>great Sensation</h3>
-          <p>{currentProfile && currentProfile.title} </p>
+          <p>{currentProfile && currentProfile.item_desc} </p>
         </div>
       </div>
       <div className="buttonWrapper">
